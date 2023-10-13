@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html{
+    font-family: "Inter",sans-serif;
+  }
+:root{
+    --yellow-color:#C29D59;
+    --dark-color:#2B2B2B;
+    --icon-size:25px;
+    --light-white:#f1f1f1;
+    --border-right:1px solid #f1f1f1;
+    --box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+    
+  }
+.thumbnai-wrapper{
+    max-height: 100vh;
+    position: relative;
+}
+.thumb-container{
+position: relative;
+}
+.thumb-content{
+    top: 20%;
+    right: 200px;
+    left: 200px;
+    position: absolute;
+    align-items: center;
+    
+}
+.thumb-desc1{
+    color: var(--light-white);
+    font-size: 50px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.thumb-desc2{
+    color: var(--light-white);
+    border: 0;
+    outline: 0;
+    color: var(--light-white);
+    font-size: 50px;
+    background-color: var(--yellow-color);
+    padding: 10px 60px;
+    width: 500px;
+    margin-left: 200px;
+    text-transform: capitalize;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.thumb-desc3{
+    font-size: 18px;
+    text-transform: capitalize;
+    color: var(--light-white);
+    line-height: 30px;
+    max-width: 600px;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+.thumb-container img{
+max-height: 100vh;
+width: 100%;
+}
+/* form styles for thumbnail */
+.thumb-form{
+    margin-left: 50px;
+    padding: 20px;
+    margin-right: 50px;
+    border-left: 3px solid var(--yellow-color);
+    border-right: 3px solid var(--yellow-color);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    background: var(--light-white);
+    bottom: -50px;
+}
+.thumb-form form{
+    display: flex;
+    gap: 30px;
+}
+.thumb-form form input{
+    width: 300px;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 7px;
+    padding-left: 40px;
+    display: flex;
+    font-size: 16px;
+}
+.thumb-form form  select{
+    width: 300px;
+    padding: 15px 40px;
+    border-radius: 7px;
+    
+}
+.location{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.calendar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.traveltype{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.form-icons{
+    position: absolute;
+    left: 20px;
+    right: 30px;
+    top: 30%;
+    font-size: 20px;
+    color: var(--yellow-color);
+    display: flex;
+    gap: 20px;
+}
+.btn-find{
+    padding: 10px;
+    width: 100px;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    outline: 0;
+    background: var(--yellow-color);
+}
