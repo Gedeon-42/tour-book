@@ -20,14 +20,14 @@ function Footer() {
 </div>
 <div className="footer-content2">
   <ul>
-    <li>
-      <Link> home</Link>
-      <Link> about</Link>
-      <Link> destination</Link>
-      <Link> tour</Link>
-      <Link> blog</Link>
-      <Link> contact us</Link>
-    </li>
+    
+  <li><Link> home</Link></li>
+      <li><Link> about</Link></li>
+      <li><Link> destination</Link></li>
+     <li><Link> tour</Link></li> 
+      <li><Link> blog</Link></li>
+     <li> <Link> contact us</Link></li>
+    
   </ul>
 </div>
 <div className="footer-content3">

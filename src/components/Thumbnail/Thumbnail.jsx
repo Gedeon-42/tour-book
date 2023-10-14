@@ -5,19 +5,35 @@ import { FaCalendar,  FaFlag, } from 'react-icons/fa'
 import{ImLocation2,}from 'react-icons/im'
 import Carousel from 'react-bootstrap/Carousel';
 import cal from '../../assets/images/cal.jpg'
+import pixel1 from '../../assets/images/pixel1.jpeg'
+import pixel3 from '../../assets/images/pixel3.jpeg'
+import pixels2 from '../../assets/images/pixels2.jpeg'
+import pixel7 from '../../assets/images/pixel7.jpeg'
 function Thumbnail() {
 
   const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
+  const [direction,setDirection] = useState(null)
+  const handleSelect = (selectedIndex,e) => {
+    if(direction===null){
+      setDirection(e.direction)
+    }
     setIndex(selectedIndex);
+  };
+  const handleNext = () => {
+    setDirection('next');
+    setIndex((index + 1) % 3); // Replace 3 with the number of slides
+  };
+
+  const handlePrev = () => {
+    setDirection('prev');
+    setIndex((index - 1 + 3) % 3); // Replace 3 with the number of slides
   };
 
   return (
     <div className='thumbnai-wrapper'>
       <div className='thumb-container'>
         
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
       <Carousel.Item>
    <img src={sea}/>
         <Carousel.Caption>
@@ -44,7 +60,7 @@ function Thumbnail() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <img src={sea}/>
+      <img src={pixel7}/>
         <Carousel.Caption>
         <div className="thumb-contentr">
         <h1 className='thumb-desc1'>life is too short</h1>
@@ -56,6 +72,23 @@ function Thumbnail() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    <div className="custom-carousel-controls">
+      {/* Custom navigation controls */}
+      <div
+        className="custom-carousel-control custom-prev"
+        onClick={handlePrev}
+        
+      >
+        <p>prev</p>
+      </div>
+      <div
+        className="custom-carousel-control custom-next"
+        onClick={handleNext}
+        
+      >
+        <p>next</p>
+      </div>
+    </div>
       </div>
       <div className="thumb-form">
         <form action="">

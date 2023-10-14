@@ -130,3 +130,47 @@ width: 100%;
     outline: 0;
     background: var(--yellow-color);
 }
+.carousel-control-prev, .carousel-control-next {
+    display: none; /* Hide the default navigation buttons */
+  }
+  .custom-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--yellow-color);
+    
+    cursor: pointer;
+    
+  }
+  .custom-prev{
+    position: absolute;
+    color: var(--light-white);
+    text-transform: capitalize;
+    padding-left: 40px;
+    padding-top: 30px;
+    width: 50px;
+    height: 80px;
+  }
+  .custom-prev p{
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    white-space: nowrap;
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+  .custom-next{
+    position: absolute;
+    color: var(--light-white);
+    text-transform: capitalize;
+    padding-right: 40px;
+    height: 80px;
+    width: 50px;
+    right: 0;
+  }
+  .custom-next p{
+    transform: rotate(90deg);
+    transform-origin: bottom right;
+    white-space: nowrap;
+    text-transform: capitalize;
+    font-size: 20px;
+  }

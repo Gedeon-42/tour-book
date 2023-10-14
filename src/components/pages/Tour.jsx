@@ -244,7 +244,7 @@ function Tour() {
            
           </select>
           </div>
-          <div className="tour-search">
+          
             <label htmlFor="">Duration</label>
             <select>
             <option value="" disabled> any</option>
@@ -254,7 +254,7 @@ function Tour() {
             <option value="april">april</option>
             
           </select>
-          </div>
+         
                     </form>
                 </div>
                 <div className="tour-form2">

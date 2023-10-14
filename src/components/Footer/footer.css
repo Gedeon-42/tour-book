@@ -15,8 +15,11 @@
   .footer-wrapper{
     display: flex;
     background: var(--dark-color);
-    height: 70vh;
+    height: 80vh;
     padding: 20px 70px;
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   }
   .footer-content1{
     flex-basis: 35%;
@@ -32,7 +35,8 @@
 
   .footer1-desc p{
     color: var(--light-white);
-    font-size: 20px;
+    font-size: 17px;
+    line-height: 22px;
   }
   .footer1-desc form input{
     padding: 10px;

@@ -69,7 +69,8 @@ text-transform: capitalize;
 /* amazing section styles */
 .Amazing-wrapper{
     padding:  2px 100px;
-    height: 90vh;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 .amazing-header{
     display:flex;
@@ -89,9 +90,10 @@ text-transform: capitalize;
 .amazing-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: minmax(200px, auto);
+    grid-auto-rows: minmax(150px, auto);
     grid-row-gap: 40px;
     grid-column-gap: 40px;
+    
 }
 .box{
     position: relative;
@@ -349,8 +351,9 @@ display: flex;
     width: 300px;
 }
 .tour-form1 form select{
-    padding: 7px 40px;
+    padding: 13px 1px;
     width: 300px;
+    text-align: left;
 }
 .tour-search{
     position: relative;

@@ -67,6 +67,23 @@ box-shadow:var(--box-shadow) ;
 z-index: 1000;
 background:var(--light-white);
 }
+.large-navbanner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 30px;
+    box-shadow:var(--box-shadow) ;
+    z-index: 1000;
+    background:var(--light-white);
+    transition: 2s ease-out;
+    
+    }
+    
 .banner-btns{
     display: flex;
     gap: 40px;
