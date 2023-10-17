@@ -5,6 +5,15 @@ import Contact from "./components/pages/Contact";
 import TourList from "./components/pages/TourList";
 import Layout from "./components/Layout/Layout";
 import Tour from "./components/pages/Tour";
+import Login from "./components/Auth/Login";
+import Dashboard from "./components/Dashboard/Dashboard";
+import TourDetail from "./components/pages/TourDetail";
+import Tourdashboard from "./components/Dashboard/Tours";
+import Adminhome from "./components/Dashboard/Adminhome";
+import Tour1 from "./components/Dashboard/Tours";
+import Places from "./components/Dashboard/Places";
+import Calendar from "./components/Dashboard/Calendar";
+import Users from "./components/Dashboard/Users";
 
 const router = createBrowserRouter([
 
@@ -21,20 +30,57 @@ const router = createBrowserRouter([
             path:'/signup',
             element:<Signup/>
         },
+       
         {
             path:'/contact',
             element:<Contact/>
-        },{
-            path:'/tourList',
-            element:<TourList/>
         },
         {
             path:'/tour',
             element:<Tour/>
         },
+        {
+            path:'/tour/:id',
+            element:<TourDetail/>
+        },
     ]
 
 },
+
+    {
+        path:'/login',
+        element:<Login/>
+    },
+{
+    path:'/admin',
+    element:<Dashboard/>,
+    children:[
+        {
+            path:'/admin',
+            element:<Adminhome/>
+        },
+        {
+            path:'/admin/dashboard',
+            element:<Adminhome/>
+        },
+        {
+            path:'/admin/tour',
+            element:<Tour1/>
+        },
+        {
+            path:'/admin/places',
+            element:<Places/>
+        },
+        {
+            path:'/admin/calendar',
+            element:<Calendar/>
+        },
+        {
+            path:'/admin/users',
+            element:<Users/>
+        }
+    ]
+}
 
  
 

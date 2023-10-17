@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --yellow-color:#C29D59;
+    --dark-color:#2B2B2B;
+    --icon-size:25px;
+    --light-white:#f1f1f1;
+    --border-right:1px solid #f1f1f1;
+    --box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+    
+  }
+.login-wrapper{
+    display: flex;
+    padding: 50px 30px;
+    background-image: url('../../assets/images/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-page{
+    flex-basis: 40%;
+    background-color:white;
+    padding: 20px;
+}
+.login-form{
+    display: flex;
+    box-shadow: var(--box-shadow);
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 30px;
+    width: 400px;
+    padding: 10px;
+}
+.login-form h1{
+    font-size: 23px;
+}
+.login-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-form form input[type=email] {
+   width: 100%;
+   border-radius: 7px;
+   padding: 10px; 
+   outline: 0;
+   border: 0;
+   border: 1px solid lightgray;
+}
+.login-form form input[type=password] {
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px; 
+    outline: 0;
+    border: 1px solid lightgray;
+ }
+ .login-form form input[type=checkbox] {
+    width: 20px;
+    border-radius: 7px;
+ }
+.check-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.password-forgot{
+    display: flex;
+    justify-content: space-between;
+}
+.password-forgot a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.login-form form button[type=submit]{
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px; 
+    outline: 0;
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+    border: 1px solid lightgray;
+    background: dodgerblue
+}
+.login-form form button[type=button]{
+    border-radius: 7px;
+    padding: 10px; 
+    outline: 0;
+    border: 1px solid lightgray;
+  
+}
+
+legend{
+padding: 10px 10px;
+display: block;
+font-size: 15px;
+}
+.btn-google1{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-google{
+    width: 120px;
+}
+.btn-facebook{
+    width: 120px;
+    color: dodgerblue;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    gap: 5px;
+}
+.google{
+    width: 20px;
+    height: 20px;
+}
+.login-image{
+    flex-basis: 60%;
+    background: white;
+}
+.login-image-container img{
+    width: 100%;
+    height: 100%;
+    
+}

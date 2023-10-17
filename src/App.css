@@ -246,6 +246,7 @@ display: flex;
 .loacation-img{
         width: 100%;
         height: 200px;
+        margin-bottom: 20px;
       }
 .tour-location-desc{
     display: flex;
@@ -253,6 +254,7 @@ display: flex;
     gap: 10px;
     padding: 20px;
     border-left: 2px solid var(--yellow-color);
+    position: relative;
 } 
 .tour-location-desc .locatio-btn{
     width: 100px;
@@ -261,6 +263,8 @@ display: flex;
     padding: 7px;
     border: 0;
     outline: 0;
+    position: absolute;
+    top: -30px;
 }
 .tour-location-desc h1{
     font-size: 16px;
@@ -315,6 +319,7 @@ display: flex;
     outline: 0;
     border: 0;
     border-radius: 7px;
+    text-decoration: none;
 }
 .tour-form-wraper{
     display: flex;
@@ -351,7 +356,7 @@ display: flex;
     width: 300px;
 }
 .tour-form1 form select{
-    padding: 13px 1px;
+    padding: 13px 40px;
     width: 300px;
     text-align: left;
 }
@@ -362,6 +367,7 @@ display: flex;
     position: absolute;
     top: 10px;
     left: 20px;
+    color: var(--yellow-color);
 }
 .tour-form2{
     display: flex;
@@ -384,4 +390,81 @@ display: flex;
 }
 .tour-form3 p{
     width: 300px;
+}
+/* tour detail styles */
+.detail-content-wrapper{
+  display: flex;
+  position: relative;
+  margin-top: 30px;
+  height: 200vh;
+}
+.detail-content-wrapper1{
+  flex-basis: 60%;
+  padding:  10px 20px;
+}
+.detail-location-desc{
+  display: flex;
+}
+.information,.tour-plan,.location,.gallery,.review{
+  padding: 20px;
+  border: 1px solid black;
+  width: 150px;
+}
+.offer-detail-amount{
+  display: flex;
+  justify-content: space-between;
+}
+.offer-detail-amount h1{
+  font-size: 26px;
+  flex-basis: 60%;
+}
+.amount-perperson{
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: var(--yellow-color);
+}
+.amount-perperson .amount-1{
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top:5px;
+  left: 20px;
+  color: var(--light-white);
+  border-bottom: 1px solid lightgray;
+  width: 60%;
+}
+.amount-perperson .amount-2{
+  position: absolute;
+  top:30px;
+  color: var(--light-white);
+  font-size: 12px;
+}
+.header-detail-desc{
+  display: flex;
+  padding: 10px;
+  background: var(--yellow-color);
+  font-size: 16px ;
+  margin: 30px 1px;
+  justify-content: space-between;
+}
+.table-wrapper{
+  width: 100%;
+
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+table th {
+  border: 1px solid lightgray;
+  width: 50%;
+  padding: 20px;
+}
+table td{
+  border: 1px solid lightgrey;
+  width: 50%;
 }

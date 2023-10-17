@@ -4,9 +4,13 @@ import mountain from '../../assets/images/mountain.jpg'
 import pixel1 from '../../assets/images/pixel1.jpeg'
 import pixel from '../../assets/images/sea2.jpeg'
 import pixel7 from '../../assets/images/pixel7.jpeg'
+import {tours} from '../../assets/data/tours'
 import { FaCalendar, FaClock, FaSearch, FaUserFriends, FaUserInjured } from 'react-icons/fa'
 import { ImLocation2 } from 'react-icons/im'
+import { Link, useParams } from 'react-router-dom'
 function Tour() {
+    const id = useParams()
+
   return (
     <div className='tour-wrapper'>
         
@@ -39,187 +43,40 @@ function Tour() {
                 </div>
            {/* location grid wrapper */}
            <div className="tour-location-container">
-            <div className="tour-loaction-content">
-                <img className='loacation-img' src={pixel7}/>
-                <div className="tour-location-desc">
-                    <button className='locatio-btn'> India</button>
-                    <h1>holiday planner is is a world learning</h1>
-                    <h1>Online tour booking platform</h1>
-                    <p>Far far away, behind the word mountains, far from the countries
-                         Vokalia and Consonantia,</p>
+            
+                {tours.map((tour)=>(
+                    <div key={tour.id} className="tour-loaction-content">
+<img className='loacation-img' src={tour.image}/>
+<div className="tour-location-desc">
+                    <button className='locatio-btn'> {tour.location}</button>
+                    <h1>{tour.title}</h1>
+                    <h1>{tour.subtitle}</h1>
+                    <p>{tour.description},</p>
                          <div className="laction-size">
                             <div className="duration">
                                 <FaClock className='location-icon'/>
                                 <div className="duration-desc">
                                     <h4>Duration</h4>
-                                    <p>2days</p>
+                                    <p>{tour.time}</p>
                                 </div>
                                 </div>
                             <div className="size">
                                 <FaUserFriends className='location-icon'/>
                                 <div className="duration-desc">
                                     <h4>Group size</h4>
-                                    <p>15 people</p>
+                                    <p>{tour.size}</p>
                                 </div>
                                 
                             </div>
                          </div>
                          <div className="tour-amount">
-                            <h1>$1200</h1>
-                            <button className='btn-book'>Book now</button>
+                            <h1>${tour.amount}</h1>
+                            <Link to={`/tour/${tour.id}`} className='btn-book'>Book now</Link>
                          </div>
                 </div>
-            </div>
-            <div className="tour-loaction-content">
-                <img className='loacation-img' src={pixel1}/>
-                <div className="tour-location-desc">
-                    <button className='locatio-btn'> India</button>
-                    <h1>holiday planner is is a world learning</h1>
-                    <h1>Online tour booking platform</h1>
-                    <p>Far far away, behind the word mountains, far from the countries
-                         Vokalia and Consonantia,</p>
-                         <div className="laction-size">
-                            <div className="duration">
-                                <FaClock className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Duration</h4>
-                                    <p>2days</p>
-                                </div>
-                                </div>
-                            <div className="size">
-                                <FaUserFriends className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Group size</h4>
-                                    <p>15 people</p>
-                                </div>
-                            </div>
-                         </div>
-                         <div className="tour-amount">
-                            <h1>$1200</h1>
-                            <button className='btn-book'>Book now</button>
-                         </div>
-                </div>
-            </div>
-            <div className="tour-loaction-content">
-                <img className='loacation-img' src={mountain}/>
-                <div className="tour-location-desc">
-                    <button className='locatio-btn'> India</button>
-                    <h1>holiday planner is is a world learning</h1>
-                    <h1>Online tour booking platform</h1>
-                    <p>Far far away, behind the word mountains, far from the countries
-                         Vokalia and Consonantia,</p>
-                         <div className="laction-size">
-                            <div className="duration">
-                                <FaClock className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Duration</h4>
-                                    <p>2days</p>
-                                </div>
-                                </div>
-                            <div className="size">
-                                <FaUserFriends/>
-                                <div className="duration-desc">
-                                    <h4>Group size</h4>
-                                    <p>15 people</p>
-                                </div>
-                            </div>
-                         </div>
-                         <div className="tour-amount">
-                            <h1>$1200</h1>
-                            <button className='btn-book'>Book now</button>
-                         </div>
-                </div>
-            </div>
-            <div className="tour-loaction-content">
-                <img className='loacation-img' src={houses}/>
-                <div className="tour-location-desc">
-                    <button className='locatio-btn'> India</button>
-                    <h1>holiday planner is is a world learning</h1>
-                    <h1>Online tour booking platform</h1>
-                    <p>Far far away, behind the word mountains, far from the countries
-                         Vokalia and Consonantia,</p>
-                         <div className="laction-size">
-                            <div className="duration">
-                                <FaClock className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Duration</h4>
-                                    <p>2days</p>
-                                </div>
-                                </div>
-                            <div className="size">
-                                <FaUserFriends className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Group size</h4>
-                                    <p>15 people</p>
-                                </div>
-                            </div>
-                         </div>
-                         <div className="tour-amount">
-                            <h1>$1200</h1>
-                            <button className='btn-book'>Book now</button>
-                         </div>
-                </div>
-            </div>
-            <div className="tour-loaction-content">
-                <img className='loacation-img' src={pixel7}/>
-                <div className="tour-location-desc">
-                    <button className='locatio-btn'> India</button>
-                    <h1>holiday planner is is a world learning</h1>
-                    <h1>Online tour booking platform</h1>
-                    <p>Far far away, behind the word mountains, far from the countries
-                         Vokalia and Consonantia,</p>
-                         <div className="laction-size">
-                            <div className="duration">
-                                <FaClock className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Duration</h4>
-                                    <p>2days</p>
-                                </div>
-                                </div>
-                            <div className="size">
-                                <FaUserFriends className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Group size</h4>
-                                    <p>15 people</p>
-                                </div>
-                            </div>
-                         </div>
-                         <div className="tour-amount">
-                            <h1>$1200</h1>
-                            <button className='btn-book'>Book now</button>
-                         </div>
-                </div>
-            </div>
-            <div className="tour-loaction-content">
-                <img className='loacation-img' src={pixel7}/>
-                <div className="tour-location-desc">
-                    <button className='locatio-btn'> India</button>
-                    <h1>holiday planner is is a world learning</h1>
-                    <h1>Online tour booking platform</h1>
-                    <p>Far far away, behind the word mountains, far from the countries
-                         Vokalia and Consonantia,</p>
-                         <div className="laction-size">
-                            <div className="duration">
-                                <FaClock className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Duration</h4>
-                                    <p>2days</p>
-                                </div>
-                                </div>
-                            <div className="size">
-                                <FaUserFriends className='location-icon'/>
-                                <div className="duration-desc">
-                                    <h4>Group size</h4>
-                                    <p>15 people</p>
-                                </div>
-                            </div>
-                         </div>
-                         <div className="tour-amount">
-                            <h1>$1200</h1>
-                            <button className='btn-book'>Book now</button>
-                         </div>
-                </div>
-            </div>
+                    </div>
+                ))}
+          
            </div>
      </div>
             <div className="tour-form-wraper">

@@ -15,7 +15,7 @@
   .footer-wrapper{
     display: flex;
     background: var(--dark-color);
-    height: 80vh;
+    height: 85vh;
     padding: 20px 70px;
     position: -webkit-sticky;
   position: sticky;
@@ -60,6 +60,7 @@
   .footer-content2 ul{
     list-style-type: square;
     color: white;
+  
   }
   .footer-content2 ul li{
     display: flex;

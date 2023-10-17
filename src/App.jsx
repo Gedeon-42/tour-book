@@ -1,5 +1,6 @@
 
 import './App.css'
+
 import ControlledCarousel from './Slider'
 import Slider from './Slider'
 import Thumbnail from './components/Thumbnail/Thumbnail'

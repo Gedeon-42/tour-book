@@ -1,6 +1,5 @@
 import React from 'react'
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import data from "../../assets/images/slider.json"
 import { sliderSettings } from "../../utils/common.jsx";
 import "swiper/css";
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';

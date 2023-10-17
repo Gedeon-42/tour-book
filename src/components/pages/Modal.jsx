@@ -16,9 +16,10 @@ function Modal({openModal}) {
     <div className="modal-links" onClick={openModal}>
         <Link to='/'>Home</Link>
         <Link to='/'>About</Link>
-        <Link to='/'>destination</Link>
+        <Link to='/login'>login</Link>
         <Link to='/tour'>tour</Link>
-        <Link to='/'>contact us</Link>
+        <Link to='/tour'>tour detail</Link>
+        <Link to='/dashboard'>Dashboard</Link>
     </div>
     <div className="modal-icons">
         <FaFacebook/>

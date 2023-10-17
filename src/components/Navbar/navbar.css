@@ -62,7 +62,7 @@ left: 60px;
 right: 60px;
 position: absolute;
 top: 50px;
-padding: 20px 30px;
+padding: 10px 30px;
 box-shadow:var(--box-shadow) ;
 z-index: 1000;
 background:var(--light-white);
@@ -76,11 +76,11 @@ background:var(--light-white);
     top: 0;
     left: 0;
     right: 0;
-    padding: 20px 30px;
+    padding: 10px 30px;
     box-shadow:var(--box-shadow) ;
     z-index: 1000;
     background:var(--light-white);
-    transition: 2s ease-out;
+    transition: 1s ease-out;
     
     }
     
