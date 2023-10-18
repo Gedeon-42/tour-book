@@ -2,19 +2,45 @@ import React, { useState } from 'react'
 import profile from '../../assets/images/riyad.jpg'
 import {users} from '../../assets/data/dashboarddata'
 import EditUser from './EditUser'
+import DeleteUser from './DeleteUser'
+import AddUser from './AddUser'
 function Users() {
   const[Modal,setModal]= useState(false)
+  const[modalDelete,setModaDelete]=useState(false)
+  const[AddModal,setAddModal]= useState(false)
+  const [selecteduser,setSelectedUser]=useState(null)
+
   function openmodal(){
     setModal((prevModal)=>!prevModal)
   }
+  function deleteModal(){
+    setModaDelete((prevmodalDelete)=>!prevmodalDelete)
+  }
+  function openAddModal(){
+    setAddModal((prevAddModal)=>!prevAddModal)
+  }
+  // function to open edit modal
+  function openEditModal(user) {
+    setSelectedUser(user);
+    openmodal();
+    console.log(user)
+  }
+  function openDeletemodal(user){
+    setSelectedUser(user)
+    deleteModal()
+  }
   return (
     <div>
+
            <h1 className='text-center'> users list</h1>
        
-        {Modal?<EditUser openmodal={openmodal}/>:(
+        {Modal&&<EditUser openmodal={openmodal} user={selecteduser}/> }
           <>
+          {modalDelete&&<DeleteUser deleteModal={deleteModal} user={selecteduser} />}
+          {AddModal &&<AddUser openAddModal={openAddModal}/>}
            <form className='tour-input' action="" method="get">
-           <input type="text" placeholder='search tours' />
+           <input type="text" placeholder='search user' />
+           <button type='button' className='btn-add-1' onClick={openAddModal}> new user </button>
          </form>
                 <table className='tables'>
                 <thead >
@@ -29,15 +55,16 @@ function Users() {
                 </thead>
                 <tbody>
                   {users.map((user)=>(
-        <tr>
+        <tr key={user.id}>
         <td className='cell'><input type="checkbox" /></td>
         <td className='cell'> <img src={user.image} className='tour-image' /></td>
           <td className='cell'>{user.name}</td>
+          <td className='cell'>{user.email}</td>
           <td className='cell'>{user.country}</td>
           <td className='cell'>{user.position}</td>
           <td className='cell edit-cell'>
-            <button className='btn-edit' onClick={openmodal}>edit</button>
-            <button className='btn-delete'>delete</button>
+            <button className='btn-edit'  onClick={() => openEditModal(user)}>edit</button>
+            <button className='btn-delete' onClick={()=>openDeletemodal(user)}>delete</button>
       
           </td>
         </tr>
@@ -55,7 +82,7 @@ function Users() {
           
           </>
           
-        )}
+       
   
     </div>
   )

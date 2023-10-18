@@ -62,7 +62,7 @@ export const links=[
 
 },
 {
-    id:6,
+    id:8,
     name:"charts",
     component:"<Component/>",
         icon:<FaChartArea/>,
@@ -75,27 +75,32 @@ export const users = [
         name:'Peter',
         image:profile,
         position:'trainee',
-        country:'France'
+        country:'France',
+        email:'peter@gmail.com'
     },
     {
         id:2,
         name:'john doe',
         image:riyad2,
         position:'trainee',
-        country:'England'
-    },   {
+        country:'England',
+        email:'john@gmail.com'
+    },
+       {
         id:3,
         name:'Katrine',
         image:riyad4,
         position:'junior devloper',
-        country:'Italy'
+        country:'Italy',
+        email:'katrine@gmail.com'
     },
     {
     id:4,
     name:'patricia',
     image:riyad4,
     position:'junior devloper',
-    country:'Italy'
+    country:'Italy',
+    email:'patricia@gmail.com'
 }
 ]
 

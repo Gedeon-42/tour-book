@@ -7,16 +7,16 @@ function Tour1() {
       <div className="tour-description">
         <h1>tour details</h1>
         <div className="tour-manage-btn">
-          <form action="" method="get">
+          <form action="" method="get" >
             <input type="text" className='btn-input1' placeholder=' search tours' />
-            <button className='btn-edit1'>edit</button>
-            <button className='btn-delete1'>delete</button>
+            <button className='btn-delete1'>add new</button>
           </form>
         </div>
       </div>
       <table className="tour-table">
         <thead>
           <tr>
+          <th className='tour-cell tour-desc1'>check</th>
             <th className='tour-cell tour-desc1'>tour date</th>
             <th className='tour-cell tour-desc1'>tour id</th>
             <th className='tour-cell tour-desc1'>country</th>
@@ -24,11 +24,13 @@ function Tour1() {
             <th className='tour-cell tour-desc1'>For/By</th>
             <th className='tour-cell tour-desc1'>status</th>
             <th className='tour-cell tour-desc1 '>total</th>
+            <th className='tour-cell tour-desc1 '>action</th>
           </tr>
         </thead>
         <tbody>
           {Tours.map((tour)=>(
              <tr key={tour.id}>
+              <td className='tour-cell tour-title-cell'><input type="checkbox" name=" " id="" /></td>
               <td className='tour-cell tour-title-cell'>
                 <div className="tour-title-content">
                 <img src={tour.image}className='tour-image1' alt="" />
@@ -46,6 +48,11 @@ function Tour1() {
                 </td>
                 <td className='tour-cell'>{tour.status}</td>
                 <td className='tour-cell'>{tour.amount}</td>
+                 <td className='tour-cell edit-cell'>
+                  <button className='btn-edit'>edit</button>
+                  <button className='btn-delete'>delete</button>
+                 </td>
+                
              </tr>
           ))}
          

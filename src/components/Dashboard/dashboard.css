@@ -197,11 +197,12 @@ font-weight: bold;
     text-align: left;
     width: 20%; /* Set a fixed width for cells */
     font-size: 17px;
-    text-transform: capitalize;
+    
     
   }
   .tour-input{
-    float: right;
+    display: flex;
+    justify-content: space-between;
     margin: 10px;
   }
   .tour-input input{
@@ -338,10 +339,11 @@ border-radius: 50%;
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  .tour-description{
+  .tour-manage-btn form{
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+    margin: 30px 5px;
+
   }
   .tour-description h1{
     font-size: 20px;
@@ -375,7 +377,7 @@ border-radius: 50%;
   }
   /* edit user model styles */
   .edit-user-wrapper{
-    background: #f2f2f2;
+    background: rgba(63, 63, 63, 0.7);
     position: absolute;
     top: 0;
     left: 0;
@@ -431,13 +433,37 @@ border-radius: 50%;
   padding: 8px;
   outline: 0;
 border: 0;
-border-radius: 7px;
+border-radius: 4px;
 }
 .btn-cancel-edit{
   background: crimson;
   color: white;
-  padding: 8px;
+  padding: 4px;
   outline: 0;
 border: 0;
 border-radius: 7px;
+}
+.delete-user-top{
+  margin: 30px 20px;
+}
+.delete-user-top h1{
+font-size: 15px;
+text-transform: capitalize;
+}
+.span-delete{
+  font-weight: bold;
+}
+.btn-add-1{
+  padding: 1px 10px;
+  border: 1px solid lightgray ;
+  background: black;
+  color: white;
+  border-radius: 7px;
+  font-size: 12px;
+  height: 35px;
+}
+.tour-image3{
+  width: 40px;
+  border-radius: 50%;
+  margin:7px;
 }
