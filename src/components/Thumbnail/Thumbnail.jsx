@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import sea from '../../assets/images/sea.jpg'
 import './thumbnail.css'
 import { FaCalendar,  FaFlag, } from 'react-icons/fa'
@@ -9,6 +9,7 @@ import pixel1 from '../../assets/images/pixel1.jpeg'
 import pixel3 from '../../assets/images/pixel3.jpeg'
 import pixels2 from '../../assets/images/pixels2.jpeg'
 import pixel7 from '../../assets/images/pixel7.jpeg'
+import axios from 'axios'
 function Thumbnail() {
 
   const [index, setIndex] = useState(0);
@@ -33,7 +34,7 @@ function Thumbnail() {
     <div className='thumbnai-wrapper'>
       <div className='thumb-container'>
         
-        <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+        <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
    <img src={sea}/>
         <Carousel.Caption>
@@ -91,15 +92,15 @@ function Thumbnail() {
     </div>
       </div>
       <div className="thumb-form">
-        <form action="">
-          <div className="location">
-            <div className="form-icons"><ImLocation2/></div>
+        <form action="" className='thumb-form2'>
+           <div className="locationss">
+            <div className="form-iconss"><ImLocation2/></div>
           
           <input type="text"placeholder='where to' />
-          </div>
+          </div> 
           <div className="calendar">
-            <div className="form-icons"><FaCalendar/></div>   
-            <select>
+            <div className="form-iconss"><FaCalendar/></div>   
+            <select className='select-thumb'>
             <option value="" disabled> Where to?</option>
             <option value="january">january</option>
             <option value="february">february</option>
@@ -116,7 +117,7 @@ function Thumbnail() {
           </select>
           </div>
 <div className="traveltype">
-  <div className="form-icons"> <FaFlag/></div>
+  <div className="form-iconss"> <FaFlag/></div>
   
   <select>
            <option value="" disabled> travel type</option>

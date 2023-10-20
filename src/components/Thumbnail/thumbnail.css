@@ -67,7 +67,7 @@ width: 100%;
 /* form styles for thumbnail */
 .thumb-form{
     margin-left: 50px;
-    padding: 20px;
+    padding: 10px;
     margin-right: 50px;
     border-left: 3px solid var(--yellow-color);
     border-right: 3px solid var(--yellow-color);
@@ -75,13 +75,16 @@ width: 100%;
     position: absolute;
     background: var(--light-white);
     bottom: -50px;
+    width: 90%;
+    
 }
-.thumb-form form{
+.thumb-form .thumb-form2{
     display: flex;
     gap: 30px;
+    padding: 20px;
 }
-.thumb-form form input{
-    width: 300px;
+.thumb-form .thumb-form2 input{
+    width: 200px;
     text-align: left;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -92,11 +95,11 @@ width: 100%;
 }
 .thumb-form form  select{
     width: 300px;
-    padding: 15px 40px;
+    padding: 12px 40px;
     border-radius: 7px;
     
 }
-.location{
+.locationss{
     display: flex;
     align-items: center;
     position: relative;
@@ -111,7 +114,7 @@ width: 100%;
     align-items: center;
     position: relative;
 }
-.form-icons{
+.form-iconss{
     position: absolute;
     left: 20px;
     right: 30px;

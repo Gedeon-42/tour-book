@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import profile from '../../assets/images/riyad.jpg'
-import {users} from '../../assets/data/dashboarddata'
+//import {users} from '../../assets/data/dashboarddata'
 import EditUser from './EditUser'
 import DeleteUser from './DeleteUser'
 import AddUser from './AddUser'
+import axiosClent from '../../../axiosclient'
 function Users() {
   const[Modal,setModal]= useState(false)
   const[modalDelete,setModaDelete]=useState(false)
   const[AddModal,setAddModal]= useState(false)
   const [selecteduser,setSelectedUser]=useState(null)
+  const [users,setUsers]=useState('')
 
   function openmodal(){
     setModal((prevModal)=>!prevModal)
@@ -29,6 +31,24 @@ function Users() {
     setSelectedUser(user)
     deleteModal()
   }
+
+  useEffect(() => {
+    getUsers();
+}, []);
+const getUsers = () => {
+    
+    axiosClent
+        .get('https://events-planner.onrender.com/api/v1/auth/View-all-users')
+        .then(({ data }) => {
+            console.log(data);
+            //setUsers(data.data);
+            
+        })
+        .catch(() => {
+          
+        });
+};
+
   return (
     <div>
 
@@ -54,7 +74,7 @@ function Users() {
                   </tr>
                 </thead>
                 <tbody>
-                  {users.map((user)=>(
+                  {/* {users.map((user)=>(
         <tr key={user.id}>
         <td className='cell'><input type="checkbox" /></td>
         <td className='cell'> <img src={user.image} className='tour-image' /></td>
@@ -68,7 +88,7 @@ function Users() {
       
           </td>
         </tr>
-                  ))}
+                  ))} */}
                 
           
                   

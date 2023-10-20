@@ -15,6 +15,7 @@ import Places from "./components/Dashboard/Places";
 import Calendar from "./components/Dashboard/Calendar";
 import Users from "./components/Dashboard/Users";
 import EditUser from "./components/Dashboard/EditUser";
+import DefaultLayout from "./components/Auth/DeafultLayout";
 
 const router = createBrowserRouter([
 
@@ -27,10 +28,7 @@ const router = createBrowserRouter([
             element:<App/>
         },
 
-        {
-            path:'/signup',
-            element:<Signup/>
-        },
+    
        
         {
             path:'/contact',
@@ -47,11 +45,24 @@ const router = createBrowserRouter([
     ]
 
 },
+{
+    path:'/',
+    element:<DefaultLayout/>,
+    children:[
+        {
+            path:'/signup',
+            element:<Signup/>
+        },
+        {
+            path:'/login',
+            element:<Login/>
+        },
+        
+    ]
+},
 
-    {
-        path:'/login',
-        element:<Login/>
-    },
+
+   
 {
     path:'/admin',
     element:<Dashboard/>,

@@ -197,7 +197,7 @@ font-weight: bold;
     text-align: left;
     width: 20%; /* Set a fixed width for cells */
     font-size: 17px;
-    
+    color: rgba(63, 63, 63, 0.9);
     
   }
   .tour-input{
@@ -417,6 +417,18 @@ border-radius: 50%;
     width: 400px;
     margin-bottom: 20px;
   }
+  .form-user input[type=date]{
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 400px;
+    margin-bottom: 20px;
+  }
+  .form-user select{
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 400px;
+    margin-bottom: 20px;
+  }
   .fa-times{
     right: 10px;
     top: 2px;
@@ -467,3 +479,6 @@ text-transform: capitalize;
   border-radius: 50%;
   margin:7px;
 }
+
+/* edit tour form styles */
+

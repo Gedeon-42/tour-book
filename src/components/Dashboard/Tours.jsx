@@ -1,15 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Tours } from '../../assets/data/dashboarddata'
+import EditTour from './EditTour'
+import AddTour from './AddTour'
 
 function Tour1() {
+  const[Modal,setModal]= useState(false)
+  const[AddModal,setAddModal]= useState(false)
+  function openmodal(){
+    setModal((prevModal)=>!prevModal)
+  }
+  function openAddModal(){
+    setAddModal((prevAddModal)=>!prevAddModal)
+  }
+  
   return (
     <div className='tour-details'>
+      {Modal&&<EditTour openmodal={openmodal}/>} 
+      <>
+      { AddModal &&<AddTour  openAddModal={openAddModal} />}
+      </>
+     
       <div className="tour-description">
         <h1>tour details</h1>
         <div className="tour-manage-btn">
           <form action="" method="get" >
             <input type="text" className='btn-input1' placeholder=' search tours' />
-            <button className='btn-delete1'>add new</button>
+            <button className='btn-delete1' onClick={openAddModal}>add new</button>
           </form>
         </div>
       </div>
@@ -49,7 +65,7 @@ function Tour1() {
                 <td className='tour-cell'>{tour.status}</td>
                 <td className='tour-cell'>{tour.amount}</td>
                  <td className='tour-cell edit-cell'>
-                  <button className='btn-edit'>edit</button>
+                  <button className='btn-edit' onClick={openmodal}>edit</button>
                   <button className='btn-delete'>delete</button>
                  </td>
                 

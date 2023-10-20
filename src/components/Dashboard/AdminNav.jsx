@@ -4,7 +4,7 @@ import { FaGem, FaMoon, FaSun } from 'react-icons/fa'
 function AdminNav() {
   return (
     <div className='admin-nav'>
-    <h1 className='admin-h1'>Hello hussein</h1>
+    <h1 className='admin-h1'>Hello Gedeon</h1>
     <div className='admin-nav-right'>
         <div className='settings'><FaGem/></div>
         <div className="dark-light">

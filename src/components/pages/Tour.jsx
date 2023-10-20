@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import  houses from '../../assets/images/houses.jpg'
 import mountain from '../../assets/images/mountain.jpg'
 import pixel1 from '../../assets/images/pixel1.jpeg'
 import pixel from '../../assets/images/sea2.jpeg'
 import pixel7 from '../../assets/images/pixel7.jpeg'
-import {tours} from '../../assets/data/tours'
+//import {tours} from '../../assets/data/tours'
 import { FaCalendar, FaClock, FaSearch, FaUserFriends, FaUserInjured } from 'react-icons/fa'
 import { ImLocation2 } from 'react-icons/im'
 import { Link, useParams } from 'react-router-dom'
+import axiosClent from '../../../axiosclient'
 function Tour() {
     const id = useParams()
-
+    const[tours,setTours]=useState([])
+    useEffect(() => {
+        getUsers();
+    }, []);
+    const getUsers = () => {
+        axiosClent
+            .get('https://events-planner.onrender.com/api/v1/Tours/')
+            .then(({ data }) => {
+                console.log(data.data);
+                setTours(data.data);
+                
+            })
+            .catch(() => {
+            });
+    };
+   
+            
+   
   return (
     <div className='tour-wrapper'>
         
@@ -45,33 +63,33 @@ function Tour() {
            <div className="tour-location-container">
             
                 {tours.map((tour)=>(
-                    <div key={tour.id} className="tour-loaction-content">
-<img className='loacation-img' src={tour.image}/>
+                    <div key={tour._id} className="tour-loaction-content">
+<img className='loacation-img' src={tour.backdropImage}/>
 <div className="tour-location-desc">
-                    <button className='locatio-btn'> {tour.location}</button>
-                    <h1>{tour.title}</h1>
-                    <h1>{tour.subtitle}</h1>
-                    <p>{tour.description},</p>
+                    <button className='locatio-btn'> {tour.Title}</button>
+                    <h1>{tour.TourType}</h1>
+                    <h1>{tour.destination}</h1>
+                    <p>{tour.Discription}</p>
                          <div className="laction-size">
                             <div className="duration">
                                 <FaClock className='location-icon'/>
                                 <div className="duration-desc">
-                                    <h4>Duration</h4>
-                                    <p>{tour.time}</p>
+                                    <h4>time</h4>
+                                    <p>{tour.fromMonth}</p>
                                 </div>
                                 </div>
                             <div className="size">
                                 <FaUserFriends className='location-icon'/>
                                 <div className="duration-desc">
                                     <h4>Group size</h4>
-                                    <p>{tour.size}</p>
+                                    <p>{tour.GroupTize}</p>
                                 </div>
                                 
                             </div>
                          </div>
                          <div className="tour-amount">
-                            <h1>${tour.amount}</h1>
-                            <Link to={`/tour/${tour.id}`} className='btn-book'>Book now</Link>
+                            <h1>{tour.Price}</h1>
+                            <button className='btn-book'>Book now</button>
                          </div>
                 </div>
                     </div>
