@@ -7,6 +7,7 @@ import { FaFacebook, FaGoogle } from 'react-icons/fa'
 import axios from 'axios'
 import axiosClent from '../../../axiosclient'
 import { useStateContext } from '../../assets/Context/ContextProvide'
+import axiosClient from '../../../axiosclient'
 function Login() {
     const[email,setEmail]=useState('')
     const[Password,setPassword]=useState('')
@@ -18,7 +19,7 @@ function Login() {
     const payload = {email,Password}
     console.log(payload)
     
-        axiosClent.post('https://events-planner.onrender.com/api/v1/auth/login',payload)
+        axiosClient.post('https://events-planner.onrender.com/api/v1/auth/login',payload)
         .then(({ data }) => {
             setUser(data.user);
             setToken(data.token);

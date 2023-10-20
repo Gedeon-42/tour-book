@@ -6,9 +6,9 @@ import Sidebar from './Sidebar'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 function Dashboard() {
   const{user,token}= useStateContext()
-  if(!token){
-    return <Navigate to='/login'/>
-  }
+//  / if(!token){
+//     return <Navigate to='/login'/>
+//   }
   return (
   
     <div className='Dashboard-wrapper'>

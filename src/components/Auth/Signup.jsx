@@ -5,8 +5,10 @@ import google from '../../assets/images/google1.png'
 import { FaFacebook } from 'react-icons/fa'
 import axiosClent from '../../../axiosclient'
 import { useStateContext } from '../../assets/Context/ContextProvide'
+import axiosClient from '../../../axiosclient'
+import axios from 'axios'
 function Signup() {
-const{setUser,setToken}=useStateContext()
+
 
     const[email,setEmail]=useState('')
     const[FullNames,setFullnames]=useState('')
@@ -15,21 +17,23 @@ const{setUser,setToken}=useStateContext()
     const[Password,setPassword]=useState('')
     const[Role,setRole]=useState('');
 const navigate = useNavigate()
-
- function handlesubmit(e){
-    e.preventDefault()
-    const payload = {email,FullNames,PhoneNumber,Password,Location}
-    console.log(payload)
-    // send data into database
-    axiosClent.post('https://events-planner.onrender.com/api/v1/auth/signup ',payload).then(({ data }) => {
-                setUser(data.user);
-                setToken(data.token);
-            
-            })
-
+const handlesubmit = async(e) =>{
+    e.preventDefault();
+    const payload = { email, FullNames, PhoneNumber, Password, Location };
+    try {
+        const response = await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', payload);
+        const { access_token } = response.data; // Extract the access_token from the response
+        if (access_token) {
+          localStorage.setItem('token', access_token); // Store the token in local storage
+          console.log('token was stored')
+        } else {
+          console.error('Token is missing in the response data.');
+        }
+      } catch (error) {
+        console.error('Request failed:', error);
+      }
   
-
- }
+  }
 
   return (
     <div className='login-wrapper'>

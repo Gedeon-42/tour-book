@@ -5,6 +5,7 @@ import EditUser from './EditUser'
 import DeleteUser from './DeleteUser'
 import AddUser from './AddUser'
 import axiosClent from '../../../axiosclient'
+import axios from 'axios'
 function Users() {
   const[Modal,setModal]= useState(false)
   const[modalDelete,setModaDelete]=useState(false)
@@ -37,11 +38,15 @@ function Users() {
 }, []);
 const getUsers = () => {
     
-    axiosClent
-        .get('https://events-planner.onrender.com/api/v1/auth/View-all-users')
+    axios
+        .get('https://events-planner.onrender.com/api/v1/auth/View-all-users',{
+          headers:{
+     Authorization:`Bearer ${localStorage.getItem('token')}`
+          }
+        })
         .then(({ data }) => {
-            console.log(data);
-            //setUsers(data.data);
+            
+            setUsers(data.data);
             
         })
         .catch(() => {
@@ -74,7 +79,7 @@ const getUsers = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {users.map((user)=>(
+                   {users?.map((user)=>(
         <tr key={user.id}>
         <td className='cell'><input type="checkbox" /></td>
         <td className='cell'> <img src={user.image} className='tour-image' /></td>
@@ -88,7 +93,7 @@ const getUsers = () => {
       
           </td>
         </tr>
-                  ))} */}
+                  ))} 
                 
           
                   

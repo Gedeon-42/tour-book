@@ -1,27 +1,23 @@
 import axios from "axios";
+const axiosClient = axios.create({
+  baseURL: 'https://events-planner.onrender.com',
+});
 
-const axiosClent = axios.create({
-    baseURL:'https://events-planner.onrender.com/'
+axiosClient.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem('TOKEN')}`
+  return config
+});
+
+axiosClient.interceptors.response.use(response => {
+  return response;
+}, error => {
+  if (error.response && error.response.status === 401) {
+    localStorage.removeItem('TOKEN')
+    window.location.reload();
+    // router.navigate('/login')
+    return error;
+  }
+  throw error;
 })
-axiosClent.interceptors.request.use((config) => {
-    const token = localStorage.getItem('ACCESS_TOKEN');
-    config.headers.Authorization = `Bearer ${token}`
-    return config;
-  })
-  
-  axiosClent.interceptors.response.use((response) => {
-    return response
-  }, (error) => {
-    const {response} = error;
-    if (response.status === 401) {
-      localStorage.removeItem('ACCESS_TOKEN')
-      // window.location.reload();
-    } else if (response.status === 404) {
-      //Show not found
-    }
-  
-    throw error;
-  })
-export default axiosClent
 
-
+export default axiosClient;
