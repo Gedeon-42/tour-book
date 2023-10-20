@@ -36,7 +36,7 @@ function Thumbnail() {
         
         <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-   <img src={sea}/>
+   <img src={pixels2}/>
         <Carousel.Caption>
         <div className="thumb-contentr">
         <h1 className='thumb-desc1'>life is too short</h1>
