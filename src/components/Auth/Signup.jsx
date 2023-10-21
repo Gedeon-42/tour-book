@@ -16,22 +16,32 @@ function Signup() {
     const[Location,setLocation]=useState('')
     const[Password,setPassword]=useState('')
     const[Role,setRole]=useState('');
+    const{setToken,setUser}=useStateContext()
 const navigate = useNavigate()
 const handlesubmit = async(e) =>{
     e.preventDefault();
     const payload = { email, FullNames, PhoneNumber, Password, Location };
-    try {
-        const response = await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', payload);
-        const { access_token } = response.data; // Extract the access_token from the response
-        if (access_token) {
-          localStorage.setItem('token', access_token); // Store the token in local storage
-          console.log('token was stored')
-        } else {
-          console.error('Token is missing in the response data.');
-        }
-      } catch (error) {
-        console.error('Request failed:', error);
-      }
+
+    await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', payload).then(({data})=>{
+      setUser(data.user)
+      setToken(data.access_token)
+      navigate('/login')
+    });
+
+
+    // try {
+    //     const response = await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', payload);
+    //     const { access_token } = response.data; // Extract the access_token from the response
+    //     if (access_token) {
+
+    //       localStorage.setItem('token', access_token); // Store the token in local storage
+    //       console.log('token was stored')
+    //     } else {
+    //       console.error('Token is missing in the response data.');
+    //     }
+    //   } catch (error) {
+    //     console.error('Request failed:', error);
+    //   }
   
   }
 

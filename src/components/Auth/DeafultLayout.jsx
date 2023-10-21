@@ -3,10 +3,10 @@ import { useStateContext } from '../../assets/Context/ContextProvide'
 import { Navigate, Outlet } from 'react-router-dom'
 
 function DefaultLayout() {
-    // const{token}= useStateContext()
-    // if(!token){
-    //   return <Navigate to='/admin'/>
-    // }
+     const{access_token}= useStateContext()
+     if(access_token){
+      return <Navigate to='/admin'/>
+     }
   return (
     <div>
         <Outlet/>

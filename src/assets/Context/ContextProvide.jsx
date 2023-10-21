@@ -3,22 +3,23 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const stateContext = createContext({
     user: null,
-    token: null,
+    access_token: null,
     setUser: () => {},
     setToken: () => {},
 });
 export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState({});
-    const [token, _setToken] = useState(localStorage.getItem("TOKEN"));
+    const [access_token, _setToken] = useState(localStorage.getItem("token"));
     const [tours,setTours] = useState([])
     const [allusers,setAllUsers]=useState([])
     
-    const setToken = (token) => {
-        _setToken(token);
-        if (token) {
-            localStorage.setItem("TOKEN", token);
+    const setToken = (access_token) => {
+        _setToken(access_token);
+        if (access_token) {
+            localStorage.setItem('token', access_token); // Store the token in local storage
+            
         } else {
-            localStorage.removeItem("TOKEN");
+            localStorage.removeItem("token");
         }
     };
     useEffect(()=>{
@@ -58,7 +59,7 @@ export const ContextProvider = ({ children }) => {
             value={{
                 user,
                 setUser,
-                token,
+                access_token,
                 setToken,
                 tours,
                 setTours,
