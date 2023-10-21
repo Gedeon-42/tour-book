@@ -3,6 +3,7 @@ import pixel1 from '../../assets/images/pixel1.jpeg'
 import pixel3 from '../../assets/images/pixel3.jpeg'
 import pixels2 from '../../assets/images/pixels2.jpeg'
 import pixel7 from '../../assets/images/pixel7.jpeg'
+import land3 from '../../assets/images/land3.jpg'
 function Amazing() {
   return (
     <div className='Amazing-wrapper'>
@@ -13,16 +14,16 @@ function Amazing() {
         </div>
         
 <div className="amazing-container">
-<div className="box box1">
+<div className="boxx box1">
 <img src={pixel1} alt="" />
 </div>
-<div className="box box2">
+<div className="boxx box2">
     <img src={pixels2} alt="" />
 </div>
-<div className="box box3">
-    <img src={pixel3} alt="" />
+<div className="boxx box3">
+    <img src={land3} alt="" />
 </div>
-<div className="box box4">
+<div className="boxx box4">
 <img src={pixel7} alt="" />
 </div>
 

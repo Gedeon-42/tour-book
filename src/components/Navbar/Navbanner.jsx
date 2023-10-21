@@ -21,7 +21,7 @@ const navBannerClass = isScrolled ? 'large-navbanner':'navbanner'
   return (
 <>
 
-  <div className={navBannerClass }>
+  <div className='navbanner'>
    
    <div className="banner-logo">
        <img src={logo}/>

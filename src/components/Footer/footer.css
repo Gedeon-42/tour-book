@@ -95,4 +95,18 @@
     color: var(--light-white);
     font-size: 16px;
   }
+  /* footer responsive design */
+  @media screen and (max-width: 900px) {
+    .footer-wrapper{
+      display: flex;
+      flex-direction: column;
+      background: var(--dark-color);
+      height: auto;
+      padding: 20px;
+      position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    }
+    
+  }
   

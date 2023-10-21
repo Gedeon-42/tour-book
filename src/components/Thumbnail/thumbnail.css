@@ -177,3 +177,133 @@ width: 100%;
     text-transform: capitalize;
     font-size: 20px;
   }
+  @media screen and (max-width: 900px) {
+    .thumbnai-wrapper{
+        max-height: 150vh;
+        position: relative;
+        margin-top: 10%;
+    }
+    .thumb-container{
+        position: relative;
+        height: 100vh;
+        }
+        /* .thumb-content{
+            top: 30%;
+            right: 80px;
+            left: 80px;
+            position: absolute;
+            align-items: center;
+            border: 1px solid blue;
+            
+        } */
+      
+        .thumb-desc1{
+            color: var(--light-white);
+            font-size: 25px;
+            text-align: center;
+            text-transform: capitalize;
+
+        }
+        .thumb-desc2{
+            color: var(--light-white);
+            border: 0;
+            outline: 0;
+            color: var(--light-white);
+            font-size: 20px;
+            background-color: var(--yellow-color);
+            padding: 10px 60px;
+            width: 300px;
+            margin-left: 10px;
+            text-transform: capitalize;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .thumb-desc3{
+            font-size: 15px;
+            text-transform: capitalize;
+            color: var(--light-white);
+            line-height: 30px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .thumb-container img{
+        height: 100vh;
+        width: 100%;
+        }
+        /* form styles for thumbnail */
+.thumb-form{
+    margin-left: 20px;
+    padding: 10px;
+    margin-right: 20px;
+    border-left: 3px solid var(--yellow-color);
+    border-right: 3px solid var(--yellow-color);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    background: var(--light-white);
+    bottom: -200px;
+    width: 90%;
+    
+}
+.thumb-form .thumb-form2{
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    padding: 10px;
+}
+.thumb-form .thumb-form2 input{
+    width: 100%;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 7px;
+    border: 1px solid lightgray;
+    padding-left: 40px;
+    display: flex;
+    font-size: 16px;
+}
+.thumb-form form  select{
+    width: 100%;
+    border: 1px solid lightgrey;
+    padding: 15px 40px;
+    border-radius: 7px;
+    
+}
+.locationss{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.calendar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.traveltype{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.form-iconss{
+    position: absolute;
+    left: 20px;
+    right: 30px;
+    top: 30%;
+    font-size: 20px;
+    color: var(--yellow-color);
+    display: flex;
+    gap: 20px;
+}
+.btn-find{
+    padding: 10px;
+    width: 100%;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    outline: 0;
+    background: var(--yellow-color);
+}
+        .custom-carousel-control {
+            display: none;
+          }
+          
+  }
