@@ -7,6 +7,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import cal from '../../assets/images/cal.jpg'
 import pixel1 from '../../assets/images/pixel1.jpeg'
 import pixel3 from '../../assets/images/pixel3.jpeg'
+import land3 from '../../assets/images/land3.jpg'
 import pixels2 from '../../assets/images/pixels2.jpeg'
 import pixel7 from '../../assets/images/pixel7.jpeg'
 import axios from 'axios'
@@ -36,7 +37,7 @@ function Thumbnail() {
         
         <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-   <img src={pixels2}/>
+   <img src={land3}/>
         <Carousel.Caption>
         <div className="thumb-contentr">
         <h1 className='thumb-desc1'>life is too short</h1>

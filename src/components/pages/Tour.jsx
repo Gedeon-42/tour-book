@@ -9,26 +9,9 @@ import { FaCalendar, FaClock, FaSearch, FaUserFriends, FaUserInjured } from 'rea
 import { ImLocation2 } from 'react-icons/im'
 import { Link, useParams } from 'react-router-dom'
 import axiosClent from '../../../axiosclient'
+import { useStateContext } from '../../assets/Context/ContextProvide'
 function Tour() {
-    const id = useParams()
-    const[tours,setTours]=useState([])
-    useEffect(() => {
-        getUsers();
-    }, []);
-    const getUsers = () => {
-        axiosClent
-            .get('https://events-planner.onrender.com/api/v1/Tours/')
-            .then(({ data }) => {
-                console.log(data.data);
-                setTours(data.data);
-                
-            })
-            .catch(() => {
-            });
-    };
-   
-            
-   
+    const{tours}=useStateContext()
   return (
     <div className='tour-wrapper'>
         

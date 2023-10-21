@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+  --yellow-color:#C29D59;
+  --dark-color:#2B2B2B;
+  --icon-size:25px;
+  --light-white:#f1f1f1;
+  --border-right:1px solid #f1f1f1;
+  --box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+  
+}
+
 .admin-nav{
     display: flex;
     justify-content: space-between;
@@ -194,10 +204,10 @@ font-weight: bold;
     border-right: 0;
     border-left: 0;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     width: 20%; /* Set a fixed width for cells */
-    font-size: 17px;
-    color: rgba(63, 63, 63, 0.9);
+    font-size: 15px;
+
     
   }
   .tour-input{
@@ -217,18 +227,17 @@ font-weight: bold;
   .btn-edit{
     outline: 0;
     padding: 4px;
-    background: dodgerblue;
-    color: white;
+    background: white;
+    color: black;
     border: 0;
-    width: 100px;
     font-size: 12px;
     border-radius: 7px;
   }
   .btn-delete{
     outline: 0;
     padding: 4px;
-    background: crimson;
-    color: white;
+    background: white;
+    color: crimson;
     font-size: 12px;
     border-radius: 7px;
     border: 0;
@@ -249,22 +258,13 @@ border-radius: 50%;
 }
 .tour-cell{
     
-    padding: 10px;
-    text-align: left;
-    width: 20%; /* Set a fixed width for cells */
-    font-size: 17px;
+    padding: 8px;
+    text-align: center;
+    width: 15%; /* Set a fixed width for cells */
+    font-size: 14px;
     text-transform: capitalize;
        
 }
-.tour-title-cell {
- height: 100px;
-
-}
-.tour-title-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   
   .tour-image1 {
     max-width: 100px;
@@ -369,7 +369,7 @@ border-radius: 50%;
     padding: 7px;
     outline: 0;
     color: white;
-    background-color:black;
+    background-color: var(--yellow-color);
     width: 80px;
     border-radius: 7px;
     border: 0;
@@ -468,7 +468,7 @@ text-transform: capitalize;
 .btn-add-1{
   padding: 1px 10px;
   border: 1px solid lightgray ;
-  background: black;
+  background: var(--yellow-color);
   color: white;
   border-radius: 7px;
   font-size: 12px;

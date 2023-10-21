@@ -6,12 +6,14 @@ import DeleteUser from './DeleteUser'
 import AddUser from './AddUser'
 import axiosClent from '../../../axiosclient'
 import axios from 'axios'
+import { useStateContext } from '../../assets/Context/ContextProvide'
+import { FaEdit, FaPen, FaTrash } from 'react-icons/fa'
 function Users() {
   const[Modal,setModal]= useState(false)
   const[modalDelete,setModaDelete]=useState(false)
   const[AddModal,setAddModal]= useState(false)
   const [selecteduser,setSelectedUser]=useState(null)
-  const [users,setUsers]=useState('')
+  const{allusers}=useStateContext()
 
   function openmodal(){
     setModal((prevModal)=>!prevModal)
@@ -33,26 +35,7 @@ function Users() {
     deleteModal()
   }
 
-  useEffect(() => {
-    getUsers();
-}, []);
-const getUsers = () => {
-    
-    axios
-        .get('https://events-planner.onrender.com/api/v1/auth/View-all-users',{
-          headers:{
-     Authorization:`Bearer ${localStorage.getItem('token')}`
-          }
-        })
-        .then(({ data }) => {
-            
-            setUsers(data.data);
-            
-        })
-        .catch(() => {
-          
-        });
-};
+
 
   return (
     <div>
@@ -71,29 +54,28 @@ const getUsers = () => {
                 <thead >
                   <tr>
                     <td className='cell tour-desc1'>check</td>
-                    <th className=' cell tour-desc1'>image</th>
-                    <th className='cell tour-desc1' >name</th>
-                    <th className='cell tour-desc1'>country</th>
-                    <th className='cell tour-desc1'>Bipgraphy</th>
+                    <th className='cell tour-desc1' > Fullname</th>
+                    <th className='cell tour-desc1'>email</th>
+                    <th className='cell tour-desc1'>Phone Number</th>
+                    <th className='cell tour-desc1'>Locations</th>
                     <th className='cell tour-desc1'>action</th>
                   </tr>
                 </thead>
                 <tbody>
-                   {users?.map((user)=>(
-        <tr key={user.id}>
+                    {allusers?.map((user)=>(
+        <tr key={user._id}>
         <td className='cell'><input type="checkbox" /></td>
-        <td className='cell'> <img src={user.image} className='tour-image' /></td>
-          <td className='cell'>{user.name}</td>
+          <td className='cell'>{user.FullNames}</td>
           <td className='cell'>{user.email}</td>
-          <td className='cell'>{user.country}</td>
-          <td className='cell'>{user.position}</td>
+          <td className='cell'>{user.PhoneNumber}</td>
+          <td className='cell'>{user.Location}</td>
           <td className='cell edit-cell'>
-            <button className='btn-edit'  onClick={() => openEditModal(user)}>edit</button>
-            <button className='btn-delete' onClick={()=>openDeletemodal(user)}>delete</button>
+            <button className='btn-edit'  onClick={() => openEditModal(user)}><FaPen/></button>
+            <button className='btn-delete' onClick={()=>openDeletemodal(user)}><FaTrash/></button>
       
           </td>
         </tr>
-                  ))} 
+                  ))}  
                 
           
                   

@@ -1,31 +1,18 @@
-import { createContext, useContext, useState } from "react";
+import axios from "axios";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const stateContext = createContext({
     user: null,
     token: null,
-    notification: null,
-    setNotification: () => {},
     setUser: () => {},
     setToken: () => {},
 });
-const initialState = {
-    notification: false,
-    message: false,
-    userProfile: false,
-};
-
 export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState({});
     const [token, _setToken] = useState(localStorage.getItem("TOKEN"));
-    const [isactive, setIsactive] = useState(true);
-    //to change screen
-    const [screenSize, setScreenSize] = useState(undefined);
-    const [notification, _setNotification] = useState("");
-    // state to display navbar profile and notification component
-    const [isClicked, setIsClicked] = useState(initialState);
-
-    // const [surveys, setSurveys] = useState(tmpSurveys);
-
+    const [tours,setTours] = useState([])
+    const [allusers,setAllUsers]=useState([])
+    
     const setToken = (token) => {
         _setToken(token);
         if (token) {
@@ -34,15 +21,38 @@ export const ContextProvider = ({ children }) => {
             localStorage.removeItem("TOKEN");
         }
     };
-    const setNotification = (message) => {
-        -setNotification(message);
-        setTimeout(() => {
-            _setNotification("");
-        }, 5000);
+    useEffect(()=>{
+        getUsers()
+        fetchTours()
+    },[])
+    // get all users
+    const getUsers = () => {
+    
+        axios
+            .get('https://events-planner.onrender.com/api/v1/auth/View-all-users',{
+              headers:{
+         Authorization:`Bearer ${localStorage.getItem('token')}`
+              }
+            })
+            .then(({ data }) => {
+                console.log(data.data)
+                setAllUsers(data.data);
+                
+            })
+            .catch(() => {
+              
+            });
     };
-    const handleClick = (clicked) => {
-        setIsClicked({ ...initialState, [clicked]: true });
-    };
+   // fetch tours
+    const fetchTours = ()=>{
+        axios.get(' https://events-planner.onrender.com/api/v1/Tours/ ')
+        .then(({data})=>{
+            setTours(data.data)
+        })
+
+    }
+
+
     return (
         <stateContext.Provider
             value={{
@@ -50,15 +60,12 @@ export const ContextProvider = ({ children }) => {
                 setUser,
                 token,
                 setToken,
-                isactive,
-                setIsactive,
-                notification,
-                setNotification,
-                isClicked,
-                screenSize,
-                setScreenSize,
-                setIsClicked,
-                handleClick,
+                tours,
+                setTours,
+                allusers,
+                setAllUsers
+
+              
             }}
         >
             {children}
