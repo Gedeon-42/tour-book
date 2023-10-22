@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import chair from '../../assets/images/chair.jpg'
+import mount7 from '../../assets/images/mount7.jpg'
 import google from '../../assets/images/google1.png'
 import './auth.css'
 import { FaFacebook, FaGoogle } from 'react-icons/fa'
@@ -40,14 +40,15 @@ function Login() {
 
  }
   return (
-    <div className='login-wrapper'>
+    <>
+        <div className='login-wrapper'>
+        <div className="advenure-wrapper">
+        <h1>every day is like holiday</h1>
+        </div>
 <div className="login-page">
-
-    
     <div className="login-form">
-    <h1>Login</h1>
-    <p>does not have account?<Link to='/signup'>signup</Link></p>
         <form action="" method="post" onSubmit={handlesubmit}>
+        <h1>Login</h1>
             <label htmlFor="email"> Email address</label>
             <input type="email"  placeholder='email address' onChange={(e)=>setEmail(e.target.value)}/>
             <div className='password-forgot'>
@@ -60,8 +61,9 @@ function Login() {
             </div>
             
             <button  className='btn-login' type='submit'>login</button>
+            <p className='message-p'>Does not have account?  <Link to='/signup'>signup</Link></p>
     
-       <fieldset >
+       {/* <fieldset >
                 <legend>or login with: </legend>
                 <div className='btn-google1'>
                 
@@ -73,13 +75,14 @@ function Login() {
                 </button>
                 </div>
                 
-            </fieldset>
+            </fieldset> */}
        
         </form>
     </div>
 </div>
-
     </div>
+    </>
+
   )
 }
 

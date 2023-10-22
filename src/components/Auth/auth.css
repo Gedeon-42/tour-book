@@ -13,22 +13,29 @@
     
   }
 .login-wrapper{
-    padding: 10px 30%;
+    padding: 10px 30px;
+    background-image: url('../../assets/images/mount7.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
 }
 .login-page{
-    flex-basis: 40%;
     background-color:white;
     padding: 20px;
+    width: 500px;
+    float: right;
+    box-shadow: var(--box-shadow);
+    border-radius: 7px;
+    height: 70vh;
 }
 .login-form{
     display: flex;
-    box-shadow: var(--box-shadow);
+    
     flex-direction: column;
     gap: 10px;
-    margin: 20px 30px;
-    width: 400px;
+    width:100%;
     padding: 10px;
 }
 .login-form h1{
@@ -37,7 +44,7 @@
 .login-form form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .login-form form input[type=email] {
@@ -105,15 +112,101 @@
     font-size: 20px;
     text-transform: capitalize;
     border: 1px solid lightgray;
-    background: dodgerblue
+    background: var(--yellow-color);
+    margin-bottom: 20px;
 }
 .login-form form button[type=button]{
     border-radius: 7px;
     padding: 10px; 
     outline: 0;
     border: 1px solid lightgray;
-  
 }
+.login-form a{
+    text-decoration: none;
+    color: black;
+}
+
+.signup-page{
+    background-color:white;
+    padding: 20px;
+    width: 500px;
+    float: right;
+    box-shadow: var(--box-shadow);
+    border-radius: 7px;
+    height: 80vh;
+}
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width:100%;
+    padding: 10px;
+}
+.email-name-signup{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 1px;
+}
+.email-name-signup input{
+    border-radius: 7px;
+    padding: 10px; 
+    outline: 0;
+    border: 0;
+    border: 1px solid lightgray;
+}
+.password-location{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.password-location input{
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px; 
+    outline: 0;
+    border: 0;
+    border: 1px solid lightgray;
+}
+.password-location input[type=checkbox] {
+    width: 20px;
+    border-radius: 7px;
+ }
+
+.password-location button[type=submit]{
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px; 
+    outline: 0;
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+    border: 1px solid lightgray;
+    background: var(--yellow-color);
+    margin-bottom: 10px;
+}
+.signup-form h1{
+    font-size: 23px;
+}
+.signup-form a{
+    text-decoration: none;
+    color: black;
+}
+.advenure-wrapper{
+    padding-top: 10%;
+}
+.advenure-wrapper h1{
+    color: black;
+    font-size: 50px;
+    text-transform: capitalize;
+    
+}
+
+
+
+
+
+
+
 
 legend{
 padding: 10px 10px;

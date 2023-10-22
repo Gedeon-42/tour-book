@@ -324,9 +324,8 @@ display: flex;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    position: absolute;
-    top: -50px;
-    gap: 50px;
+   
+    gap: 20px;
     right: 0;
     background: whitesmoke;
     box-shadow: var(--box-shadow);
@@ -549,5 +548,213 @@ text-transform: capitalize;
 .amazing-container img{
   height: 350px;
 }
- 
+.tour-container{
+  height: 50vh;
+  margin-top: 70px;
+  text-align: center;
+}
+.tour-container h1{
+   position: absolute;
+   top: 50%;
+   color: white;
+   left: 40%;
+   font-size: 20px;
+   color: #C29D59;
+}
+.tour-container img{
+  height: 50vh;
+  width: 100%;
+}
+
+.tour-content-wrapper{
+  display: block;
+height: auto;;
+  overflow: auto;
+}
+
+.tour-location-form{
+  display: flex;
+  flex-direction: column;
+}
+.sort-by{
+width: 200px;
+  padding: 7px;
+  border: 1px solid black;
+  height: 40px;
+  text-align: center;
+  width: 250px;
+}
+.tour-location-form form {
+display: flex;
+}
+.tour-location-form form select {
+      padding: 7px;
+      width: 250px;
+      height: 40px;
+    }
+.tour-location-container{
+  display: flex;
+  flex-direction: column;
+}
+.tour-loaction-content{
+  box-shadow: var(--box-shadow);
+}
+.loacation-img{
+      width: 100%;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+.tour-location-desc{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-left: 2px solid var(--yellow-color);
+  position: relative;
+} 
+.tour-location-desc .locatio-btn{
+  width: 100px;
+  color: var(--light-white);
+  background: var(--yellow-color);
+  padding: 7px;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  top: -30px;
+}
+.tour-location-desc h1{
+  font-size: 16px;
+  line-height: 10px;
+  text-transform: capitalize;
+  font-weight: 540;
+
+}
+.tour-location-desc p{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: gray;
+}
+.laction-size{
+  display: flex;
+  justify-content: space-between;
+
+}
+.duration{
+  display: flex;
+  
+}
+.duration-desc{
+  display: flex;
+  flex-direction: column;
+}
+.duration-desc h4{
+  font-size: 14px;
+}
+.duration-desc p{
+  font-size: 12px;
+}
+.size{
+  display: flex;
+}
+.location-icon{
+  color: var(--yellow-color);
+  font-size: 18px;
+}
+.tour-amount{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tour-amount h1{
+  font-size: 25px;
+}
+.btn-book{
+  padding: 10px;
+  color: var(--light-white);
+  background-color: var(--yellow-color);
+  outline: 0;
+  border: 0;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.tour-form-wraper{
+  display: block;
+  flex-direction: column;
+  padding: 40px;
+  background: whitesmoke;
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  
+}
+.tour-form1{
+  display: flex;
+  flex-direction: column;
+  padding: 2px 20px;
+  box-shadow: var(--box-shadow);
+  
+
+}
+.tour-find{
+  text-transform: uppercase;
+  font-size: 13px;
+  border-left: 2px solid var(--yellow-color);
+  padding-left: 10px;
+}
+.tour-form1 form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tour-form1 form input{
+  padding: 7px 40px;
+  font-size: 20px;
+  width: 300px;
+}
+.tour-form1 form select{
+  padding: 13px 40px;
+  width: 300px;
+  text-align: left;
+}
+.tour-search{
+  position: relative;
+}
+.form-tour-icons{
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  color: var(--yellow-color);
+}
+.tour-form2{
+  display: flex;
+  flex-direction: column;
+  padding:20px;
+  z-index: 100px;
+  box-shadow: var(--box-shadow);
+  background-color:whitesmoke;
+  height: 150px;
+}
+
+.tour-form3{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 100px;
+  height: 150px;
+  background-color: var(--yellow-color);
+  color: var(--light-white);
+}
+.tour-form3 p{
+  width: 300px;
+}
+/* tour detail  page*/
+.detail-content-wrapper{
+  display: block;
+  position: relative;
+  margin-top: 30px;
+  height: 200vh;
+}
+.detail-image{
+  width: 200px;
+  height: 100px;
+}
 }

@@ -1,19 +1,24 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { tours} from '../../assets/data/tours'
 import { FaCalendar, FaSearch } from 'react-icons/fa'
 import { ImLocation2 } from 'react-icons/im'
+import { useState } from 'react'
+import { useStateContext } from '../../assets/Context/ContextProvide'
 function TourDetail() {
-  const {id} = useParams()
-  const tour= tours.find((tour)=>tour.id === parseInt(id))
-  console.log(tour)
-  console.log(id)
-  const{amount,image,location,largeDescription,size,title,time}=tour
+  const{tours}=useStateContext()
+  const {_id} = useParams()
+  const individualTour = tours.find(tour => tour._id === _id);
+const{backdropImage,destination}=individualTour
+  if (!individualTour) {
+    // Handle the case where the tour is not found (e.g., show a not found message)
+    return <div>Tour not found.</div>;
+  }
   return (
     <div className='tourdetail-wrapper'>
       <div className='tour-container'>
-        <img src={image} alt="" />
-        <div className="tour-banner"><h1>{location}</h1></div>
+
+         <img src={backdropImage} className='detail-image' alt="" /> 
+        <div className="tour-banner"><h1>{destination}</h1></div>
         </div>
         <div className="detail-content-wrapper">
           <div className="detail-content-wrapper1">
@@ -25,24 +30,26 @@ function TourDetail() {
           <div className="review">review</div>
         </div>
         <div className="offer-detail-amount">
-          <h1>{title}</h1>
+          <h1>italy</h1>
           <div className="amount-perperson">
             <p className='amount-1'>
-              ${amount}
+              $123
             </p>
             <p className='amount-2'>per person</p>
           </div>
         </div>
         <div className="header-detail-desc">
-          <p>{time}</p>
-          <p>{size} people</p>
+          <p>12px</p>
+          <p>6 people</p>
           <p>18</p>
           <p>Greece</p>
           <p>discovery</p>
         </div>
         <div className="tour-detail-description">
           <p>
-         {largeDescription}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ipsam voluptates sed
+         repudiandae eos, itaque, assumenda voluptatibus possimus ex odit
+         nihil expedita facilis voluptas. Quasi molestias culpa officiis illum deserunt.
           </p>
         </div>
         <div className="table-wrapper">

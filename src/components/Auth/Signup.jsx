@@ -47,33 +47,39 @@ const handlesubmit = async(e) =>{
 
   return (
     <div className='login-wrapper'>
-<div className="login-page">
-
-    <div className="login-form">
-    <h1>Signup </h1>
-    <p>does not have account?  <Link to='/login'>login</Link></p>
-        <form action="" method="post" onSubmit={handlesubmit}>
-            <label htmlFor="email"> Email address</label>
+        <div className="advenure-wrapper">
+        <h1>every day is adventure</h1>
+        </div>
+        
+<div className="signup-page">
+<div className="signup-form">
+    <form action="" method="post" onSubmit={handlesubmit}>
+        <h1>Signup </h1>
+        <div className="email-name-signup">
             <input type="email"  placeholder='email address' onChange={(e)=>setEmail(e.target.value)}/>
-            <label htmlFor="full name"> Full Names</label>
+
             <input type="text" onChange={(e)=>setFullnames(e.target.value)}  placeholder=' Fullname' />
-            <label htmlFor="full name"> Phone number</label>
+        </div>
+            
+            <div className="password-location">
             <input type="number" onChange={(e)=>setPhone(e.target.value)}  placeholder=' Phone number'/>
-            <label htmlFor="location"> Location</label>
             <input type="text" onChange={(e)=>setLocation(e.target.value)}  placeholder=' location'/>
+           
+            <input type="password"  onChange={(e)=>setPassword(e.target.value)} placeholder='password'/>
             <div className='password-forgot'>
-            <label htmlFor="password">password</label>
             <Link to='/login'>forgot password</Link>
             </div>
-            <input type="password"  onChange={(e)=>setPassword(e.target.value)} placeholder='password'/>
             
             <div className='check-box'>
             <input type="checkbox" className='check-box1' />remember me
             </div>
             
-            <button  className='btn-login' type='submit'>login</button>
+            <button  className='btn-signup' type='submit'>Sign Up</button>
+            </div>
+           
+            <p className='message-p'>Already Registered?  <Link to='/login'>Login</Link></p>
     
-       <fieldset >
+       {/* <fieldset >
                 <legend>or login with: </legend>
                 <div className='btn-google1'>
                 
@@ -85,7 +91,7 @@ const handlesubmit = async(e) =>{
                 </button>
                 </div>
                 
-            </fieldset>
+            </fieldset> */}
        
         </form>
     </div>
