@@ -8,7 +8,13 @@ import { FaPen, FaTrash } from 'react-icons/fa'
 function Tour1() {
   const[Modal,setModal]= useState(false)
   const[AddModal,setAddModal]= useState(false)
-
+  const [selectedTour,setSelectedTour]=useState(null)
+   // function to open edit modal
+   function openEditModal(tour) {
+    setSelectedTour(tour);
+    openmodal();
+    console.log(tour)
+  }
   function openmodal(){
     setModal((prevModal)=>!prevModal)
   }
@@ -18,7 +24,7 @@ function Tour1() {
   const{tours,setTours}=useStateContext()
   return (
     <div className='tour-details'>
-      {Modal&&<EditTour openmodal={openmodal}/>} 
+      {Modal&&<EditTour openmodal={openmodal} tour={selectedTour}/>} 
       <>
       { AddModal &&<AddTour  openAddModal={openAddModal} />}
       </>
@@ -58,7 +64,7 @@ function Tour1() {
                 </td>
                 <td className='tour-cell'>${tour.Price}</td>
                  <td className='tour-cell edit-cell'>
-                  <button className='btn-edit' onClick={openmodal}><FaPen/></button>
+                  <button className='btn-edit' onClick={() => openEditModal(tour)}><FaPen/></button>
                   <button className='btn-delete'><FaTrash/></button>
                  </td>
                 

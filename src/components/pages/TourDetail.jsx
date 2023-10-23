@@ -5,7 +5,8 @@ import { ImLocation2 } from 'react-icons/im'
 import { useState } from 'react'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 function TourDetail() {
-  const{tours}=useStateContext()
+  // const{tours}=useStateContext()
+  let tours = []
   const {_id} = useParams()
   const individualTour = tours.find(tour => tour._id === _id);
 const{backdropImage,destination}=individualTour

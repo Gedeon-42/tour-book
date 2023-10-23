@@ -106,7 +106,8 @@
 .login-form form button[type=submit]{
     width: 100%;
     border-radius: 7px;
-    padding: 10px; 
+    padding-top: 10px; 
+    padding-bottom: 2px;
     outline: 0;
     color: white;
     font-size: 20px;
@@ -175,7 +176,8 @@
 .password-location button[type=submit]{
     width: 100%;
     border-radius: 7px;
-    padding: 10px; 
+    padding-top: 7px; 
+    padding-bottom: 2px;
     outline: 0;
     color: white;
     font-size: 20px;

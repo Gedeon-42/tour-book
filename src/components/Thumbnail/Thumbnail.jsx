@@ -14,11 +14,8 @@ import axios from 'axios'
 function Thumbnail() {
 
   const [index, setIndex] = useState(0);
-  const [direction,setDirection] = useState(null)
   const handleSelect = (selectedIndex,e) => {
-    if(direction===null){
-      setDirection(e.direction)
-    }
+  
     setIndex(selectedIndex);
   };
   const handleNext = () => {

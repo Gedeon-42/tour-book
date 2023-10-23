@@ -13,16 +13,19 @@ function Login() {
     const[Password,setPassword]=useState('')
     const { setUser, setToken } = useStateContext();
     const navigate = useNavigate()
-    
+    const [loading,setLoading]=useState(false)
  const  handlesubmit= async (e)=>{
     e.preventDefault()
     const payload = {email,Password}
-
+      setLoading(true)
     await axios.post('https://events-planner.onrender.com/api/v1/auth/login', payload).then(({data})=>{
         setUser(data.user)
         setToken(data.access_token)
+        setLoading(false)
         
-      });
+      }).catch(()=>(
+        setLoading(false)
+      ));
 
     // try {
     //     const response = await axios.post('https://events-planner.onrender.com/api/v1/auth/login', payload);
@@ -60,7 +63,7 @@ function Login() {
             <input type="checkbox" className='check-box1' />remember me
             </div>
             
-            <button  className='btn-login' type='submit'>login</button>
+            <button  className='btn-login' type='submit'>{loading?<p>loading ...</p>:(<p>login</p>)}</button>
             <p className='message-p'>Does not have account?  <Link to='/signup'>signup</Link></p>
     
        {/* <fieldset >

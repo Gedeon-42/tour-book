@@ -16,17 +16,21 @@ function Signup() {
     const[Location,setLocation]=useState('')
     const[Password,setPassword]=useState('')
     const[Role,setRole]=useState('');
+    const[loading,setLoading]=useState(false)
     const{setToken,setUser}=useStateContext()
 const navigate = useNavigate()
 const handlesubmit = async(e) =>{
     e.preventDefault();
     const payload = { email, FullNames, PhoneNumber, Password, Location };
-
+setLoading(true)
     await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', payload).then(({data})=>{
       setUser(data.user)
-      setToken(data.access_token)
+      //setToken(data.access_token)
+      setLoading(false)
       navigate('/login')
-    });
+    }).catch(()=>(
+        setLoading(false)
+    ));
 
 
     // try {
@@ -74,7 +78,7 @@ const handlesubmit = async(e) =>{
             <input type="checkbox" className='check-box1' />remember me
             </div>
             
-            <button  className='btn-signup' type='submit'>Sign Up</button>
+            <button  className='btn-signup' type='submit'>{loading?<p>loading ...</p>:(<p>signup</p>)}</button>
             </div>
            
             <p className='message-p'>Already Registered?  <Link to='/login'>Login</Link></p>

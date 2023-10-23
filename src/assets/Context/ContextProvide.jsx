@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-
+import { useQuery } from "@tanstack/react-query";
 const stateContext = createContext({
     user: null,
     access_token: null,
@@ -10,8 +10,16 @@ const stateContext = createContext({
 export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState({});
     const [access_token, _setToken] = useState(localStorage.getItem("token"));
-    const [tours,setTours] = useState([])
+    
     const [allusers,setAllUsers]=useState([])
+    const {data:tours}= useQuery({
+        queryKey: ["tours"],
+        queryFn:async ()=>{
+           const res = await axios.get(' https://events-planner.onrender.com/api/v1/Tours/ ')
+            return res.data.data
+        }
+    })
+      
     
     const setToken = (access_token) => {
         _setToken(access_token);
@@ -24,7 +32,7 @@ export const ContextProvider = ({ children }) => {
     };
     useEffect(()=>{
         getUsers()
-        fetchTours()
+        //fetchTours()
     },[])
     // get all users
     const getUsers = () => {
@@ -36,7 +44,7 @@ export const ContextProvider = ({ children }) => {
               }
             })
             .then(({ data }) => {
-                console.log(data.data)
+
                 setAllUsers(data.data);
                 
             })
@@ -45,13 +53,13 @@ export const ContextProvider = ({ children }) => {
             });
     };
    // fetch tours
-    const fetchTours = ()=>{
-        axios.get(' https://events-planner.onrender.com/api/v1/Tours/ ')
-        .then(({data})=>{
-            setTours(data.data)
-        })
+    // const fetchTours = ()=>{
+    //     axios.get(' https://events-planner.onrender.com/api/v1/Tours/ ')
+    //     .then(({data})=>{
+    //         setTours(data.data)
+    //     })
 
-    }
+    // }
 
 
     return (
@@ -62,7 +70,6 @@ export const ContextProvider = ({ children }) => {
                 access_token,
                 setToken,
                 tours,
-                setTours,
                 allusers,
                 setAllUsers
 

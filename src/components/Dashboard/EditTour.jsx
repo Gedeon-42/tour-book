@@ -1,20 +1,45 @@
 import React, { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 
-function EditTour({openmodal}) {
+function EditTour({openmodal,tour}) {
+  const[tours,setTour]=useState({
+    Description:'',
+    Title:'',
+    Price:'',
+    backdropImage:null,
+    Duration:'',
+    destination:''
+
+  })
    
+  
   return (
     <div className='edit-user-wrapper'>
          <form action="" method="get" className='form-user'>
             <FaTimes className='fa-times' onClick={openmodal}/>
                 <label htmlFor="">tour title</label>
-                <input type="text" placeholder='tour title' />
+                <input type="text" placeholder='tour title' value={tour.Title} onChange={(ev) =>
+                                setTour({
+                                    ...tours,
+                                    Title: ev.target.value,
+                                })}/>
                 <label htmlFor="">country</label>
-                <input type="text" placeholder='country' />
+                <input type="text" placeholder='country' value={tour.destination}
+                
+                onChange={(ev) =>
+                  setTour({
+                      ...tours,
+                      Title: ev.target.value,
+                  })}
+                />
                 <label htmlFor="">tour date</label>
                 <input type="date"  />
-                <label htmlFor="">owner</label>
-                <input type="text" placeholder='tour owner' />
+                <label htmlFor="">price</label>
+                <input type="text" placeholder='price' onChange={(ev) =>
+                                setTour({
+                                    ...tours,
+                                    Price: ev.target.value,
+                                })} />
                 <label htmlFor="">tour image</label>
                 <input type="file" />
                 <label htmlFor="">owner image</label>

@@ -11,7 +11,8 @@ import { Link, useParams } from 'react-router-dom'
 import axiosClent from '../../../axiosclient'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 function Tour() {
-    const{tours}=useStateContext()
+     const{tours}=useStateContext()
+    
   return (
     <div className='tour-wrapper'>
         
@@ -45,7 +46,7 @@ function Tour() {
            {/* location grid wrapper */}
            <div className="tour-location-container">
             
-                {tours.map((tour)=>(
+                {tours?.map((tour)=>(
                     <div key={tour._id} className="tour-loaction-content">
 <img className='loacation-img' src={tour.backdropImage}/>
 <div className="tour-location-desc">
