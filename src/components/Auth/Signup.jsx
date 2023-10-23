@@ -17,20 +17,20 @@ function Signup() {
     const[Password,setPassword]=useState('')
     const[Role,setRole]=useState('');
     const[loading,setLoading]=useState(false)
-    const{setToken,setUser}=useStateContext()
+    const{setToken,setUser,signupMutation}=useStateContext()
 const navigate = useNavigate()
 const handlesubmit = async(e) =>{
     e.preventDefault();
     const payload = { email, FullNames, PhoneNumber, Password, Location };
 setLoading(true)
-    await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', payload).then(({data})=>{
-      setUser(data.user)
-      //setToken(data.access_token)
-      setLoading(false)
-      navigate('/login')
-    }).catch(()=>(
-        setLoading(false)
-    ));
+    // await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', payload).then(({data})=>{
+    //   setUser(data.user)
+    //   //setToken(data.access_token)
+    //   setLoading(false)
+    //   navigate('/login')
+    // }).catch(()=>(
+    //     setLoading(false)
+    // ));
 
 
     // try {
@@ -46,7 +46,7 @@ setLoading(true)
     //   } catch (error) {
     //     console.error('Request failed:', error);
     //   }
-  
+    signupMutation.mutate(payload)
   }
 
   return (

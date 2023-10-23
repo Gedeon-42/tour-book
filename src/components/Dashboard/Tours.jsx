@@ -9,9 +9,13 @@ function Tour1() {
   const[Modal,setModal]= useState(false)
   const[AddModal,setAddModal]= useState(false)
   const [selectedTour,setSelectedTour]=useState(null)
+  // Create state for edited tour details
+  const [editedTour, setEditedTour] = useState(null);
+
    // function to open edit modal
    function openEditModal(tour) {
     setSelectedTour(tour);
+    setEditedTour(tour)
     openmodal();
     console.log(tour)
   }
@@ -21,10 +25,11 @@ function Tour1() {
   function openAddModal(){
     setAddModal((prevAddModal)=>!prevAddModal)
   }
-  const{tours,setTours}=useStateContext()
+  const{tours}=useStateContext()
+ 
   return (
     <div className='tour-details'>
-      {Modal&&<EditTour openmodal={openmodal} tour={selectedTour}/>} 
+      {Modal&&<EditTour openmodal={openmodal} tour={editedTour}/>} 
       <>
       { AddModal &&<AddTour  openAddModal={openAddModal} />}
       </>

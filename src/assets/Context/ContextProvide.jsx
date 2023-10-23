@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 const stateContext = createContext({
     user: null,
     access_token: null,
@@ -18,9 +18,37 @@ export const ContextProvider = ({ children }) => {
            const res = await axios.get(' https://events-planner.onrender.com/api/v1/Tours/ ')
             return res.data.data
         }
-    })
-      
-    
+    }) 
+const loginMutation = useMutation({
+    mutationFn: async (data) => {
+        //const res = await axios.post(url + "auth/login", data);
+       const res= await axios.post('https://events-planner.onrender.com/api/v1/auth/login', data)
+        return res.data;
+      },
+      onError: (error) => {
+        console.log(error.response.data.message);
+      },
+      onSuccess: (data) => {
+        console.log(data);
+        setToken(data.access_token)
+        window.location.href = "/admin";
+        
+      },
+})
+const signupMutation = useMutation({
+    mutationFn:async(data)=>{
+        const res =  await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', data)
+        return res.data
+    },
+    onError:(error)=>{
+        console.log(error.response.data.message);
+    },
+    onSuccess:(data)=>{
+        console.log(data)
+        window.location.href = '/login'
+    }
+})
+
     const setToken = (access_token) => {
         _setToken(access_token);
         if (access_token) {
@@ -67,6 +95,8 @@ export const ContextProvider = ({ children }) => {
             value={{
                 user,
                 setUser,
+                loginMutation,
+                signupMutation,
                 access_token,
                 setToken,
                 tours,
