@@ -10,7 +10,28 @@ function EditTour({openmodal,tour}) {
   const [editedTitle, setEditedTitle] = useState(tour.Title);
    function handleUpdate(e){
     e.preventDefault()
-    openmodal()
+    const updatedTour = {
+      destination: editedDestination,
+      duration: editedDuration,
+      groupSize: editedGroupSize,
+      price: editedPrice,
+      title: editedTitle,
+    };
+    axios
+    .patch(`https://events-planner.onrender.com/api/v1/Tours/update-Tour/${tour._id}`, updatedTour,{
+      headers:{
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    }) // Replace with your API endpoint
+    .then((response) => {
+      // Handle success, e.g., close the modal or show a success message
+      console.log('Tour updated successfully', response.data);
+      openmodal(); // Close the modal
+    })
+    .catch((error) => {
+      // Handle error, e.g., show an error message
+      console.error('Error updating tour', error);
+    });
    }
   return (
     <div className='edit-user-wrapper'>

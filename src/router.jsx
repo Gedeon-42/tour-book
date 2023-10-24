@@ -16,6 +16,7 @@ import Calendar from "./components/Dashboard/Calendar";
 import Users from "./components/Dashboard/Users";
 import EditUser from "./components/Dashboard/EditUser";
 import DefaultLayout from "./components/Auth/DeafultLayout";
+import AddTour from "./components/Dashboard/AddTour";
 
 const router = createBrowserRouter([
 
@@ -27,9 +28,6 @@ const router = createBrowserRouter([
             path:'/',
             element:<App/>
         },
-
-    
-       
         {
             path:'/contact',
             element:<Contact/>
@@ -94,6 +92,10 @@ const router = createBrowserRouter([
         {
             path:'/admin/user/edit',
             element:<EditUser/>
+        },
+        {
+            path:'/admin/tour/add',
+            element:<AddTour/>
         }
     ]
 }

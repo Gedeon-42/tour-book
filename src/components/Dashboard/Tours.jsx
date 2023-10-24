@@ -4,6 +4,7 @@ import EditTour from './EditTour'
 import AddTour from './AddTour'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 import { FaPen, FaTrash } from 'react-icons/fa'
+import DeleteTour from './DeleteTour'
 
 function Tour1() {
   const[Modal,setModal]= useState(false)
@@ -11,7 +12,8 @@ function Tour1() {
   const [selectedTour,setSelectedTour]=useState(null)
   // Create state for edited tour details
   const [editedTour, setEditedTour] = useState(null);
-
+  const[modalDelete,setModaDelete]=useState(false)
+  
    // function to open edit modal
    function openEditModal(tour) {
     setSelectedTour(tour);
@@ -25,12 +27,21 @@ function Tour1() {
   function openAddModal(){
     setAddModal((prevAddModal)=>!prevAddModal)
   }
+  function deleteModal(){
+    setModaDelete((prevmodalDelete)=>!prevmodalDelete)
+  }
+  function openDeletemodal(user){
+    setSelectedTour(user)
+    deleteModal()
+  }
+
   const{tours}=useStateContext()
  
   return (
     <div className='tour-details'>
       {Modal&&<EditTour openmodal={openmodal} tour={editedTour}/>} 
       <>
+      {modalDelete&&<DeleteTour deleteModal={deleteModal} tour={selectedTour} />}
       { AddModal &&<AddTour  openAddModal={openAddModal} />}
       </>
      
@@ -56,7 +67,7 @@ function Tour1() {
           </tr>
         </thead>
         <tbody>
-          {tours.map((tour)=>(
+          {tours?.map((tour)=>(
              <tr key={tour._id}>
               <td className='tour-cell'>
                 <input type="checkbox" name=" " id="" /></td>
@@ -70,7 +81,7 @@ function Tour1() {
                 <td className='tour-cell'>${tour.Price}</td>
                  <td className='tour-cell edit-cell'>
                   <button className='btn-edit' onClick={() => openEditModal(tour)}><FaPen/></button>
-                  <button className='btn-delete'><FaTrash/></button>
+                  <button className='btn-delete' onClick={()=>openDeletemodal(tour)}><FaTrash/></button>
                  </td>
                 
              </tr>

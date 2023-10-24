@@ -30,6 +30,7 @@ function Users() {
     openmodal();
     console.log(user)
   }
+  // function to open delete modal
   function openDeletemodal(user){
     setSelectedUser(user)
     deleteModal()
