@@ -1,13 +1,15 @@
 import React from 'react'
-import profile from '../../assets/images/riyad.jpg'
+
 import './dashboard.css'
 import { links } from '../../assets/data/dashboarddata'
 import { Link } from 'react-router-dom'
+import { FaBars } from 'react-icons/fa'
 function Sidebar() {
   return (
     <div className='sidebar'>
         <div className="sidebar-header">
-<img  src={profile} className=''/>
+          <FaBars className='sidebar-bars'/>
+
         </div>
         <div className="nav-links">
           {links.map((i)=>(

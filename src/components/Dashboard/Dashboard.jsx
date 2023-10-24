@@ -16,7 +16,6 @@ function Dashboard() {
         <Sidebar/>
         < div className='mains'>
         <Outlet/>
-        
         </div>
 
 
