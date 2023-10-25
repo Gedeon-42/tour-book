@@ -58,6 +58,7 @@ function Tour1() {
         <thead>
           <tr>
           <th className='tour-cell tour-desc1'>check</th>
+          <th className='tour-cell tour-desc1'>title</th>
             <th className='tour-cell tour-desc1'>destination</th>
             <th className='tour-cell tour-desc1'>Duration </th>
             <th className='tour-cell tour-desc1'>Groupsize</th>
@@ -71,7 +72,7 @@ function Tour1() {
              <tr key={tour._id}>
               <td className='tour-cell'>
                 <input type="checkbox" name=" " id="" /></td>
-          
+                <td className='tour-cell'>{tour.Title}</td>
               <td className='tour-cell'>{tour.destination}</td>
               <td className='tour-cell'>{tour.Duration}</td>
               <td className='tour-cell'>{tour.GroupTize}</td>

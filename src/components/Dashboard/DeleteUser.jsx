@@ -5,7 +5,7 @@ function DeleteUser({deleteModal,user}) {
   const handleDelete = () => {
   
     axios
-      .delete(`https://events-planner.onrender.com/api/v1/Tours/delete-Tour/${tour._id}`, {
+      .delete(`https://events-planner.onrender.com/api/v1/Tours/delete-Tour/${user._id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },

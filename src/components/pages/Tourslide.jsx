@@ -4,13 +4,13 @@ import { useStateContext } from '../../assets/Context/ContextProvide';
 function Tourslide() {
     const{tours}=useStateContext()
   return (
-    <div>
+    <div cl>
  
 
 
     <Carousel>
-        {tours.map((tour)=>(
-  <Carousel.Item key={tour._id}>
+        {tours?.map((tour)=>(
+  <Carousel.Item key={tour._id} className='tour-slide'>
   <img src={tour.backdropImage} text="First slide" />
   <Carousel.Caption>
     <h3>First slide label</h3>

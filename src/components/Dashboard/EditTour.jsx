@@ -25,11 +25,13 @@ function EditTour({openmodal,tour}) {
     }) // Replace with your API endpoint
     .then((response) => {
       // Handle success, e.g., close the modal or show a success message
+      alert('user edited successfully')
       console.log('Tour updated successfully', response.data);
       openmodal(); // Close the modal
     })
     .catch((error) => {
       // Handle error, e.g., show an error message
+      alert(error)
       console.error('Error updating tour', error);
     });
    }
