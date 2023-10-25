@@ -5,12 +5,13 @@ function DeleteUser({deleteModal,user}) {
   const handleDelete = () => {
   
     axios
-      .delete(`https://events-planner.onrender.com/api/v1/Tours/delete-Tour/${user._id}`, {
+      .delete(`https://events-planner.onrender.com/api/v1/auth/Delete/${user._id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       })
       .then((response) => {
+        alert('user deleted')
     
         console.log('Tour deleted successfully', response.data);
         deleteModal();
@@ -25,7 +26,8 @@ function DeleteUser({deleteModal,user}) {
     <div className='edit-user-wrapper'>
         <div className='form-user'>
             <div className="delete-user-top">
-            <h1> are you sure you want to delete user <span className='span-delete'>{user.name}</span>?</h1>
+          
+            <h1> are you sure you want to delete user <span className='span-delete'>{user.FullNames}</span>?</h1>
             <p> this action can not be undone</p>
             </div>
             <div className="button-edit-cancel">
