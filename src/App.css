@@ -237,13 +237,16 @@ display: flex;
     grid-row-gap: 20px;
     grid-column-gap: 20px;
     margin-top: 30px;
+    place-items: center;
+    justify-content: center;
 }
+
 .tour-loaction-content{
     box-shadow: var(--box-shadow);
 
 }
 .loacation-img{
-        width: 100%;
+        width: 25vw;
         height: 200px;
         margin-bottom: 20px;
       }

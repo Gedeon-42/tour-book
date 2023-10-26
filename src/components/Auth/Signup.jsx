@@ -61,6 +61,7 @@ setLoading(true)
         <h1>Signup </h1>
         <div className="email-name-signup">
             <input type="email"  placeholder='email address' onChange={(e)=>setEmail(e.target.value)}/>
+            <br/>
 
             <input type="text" onChange={(e)=>setFullnames(e.target.value)}  placeholder=' Fullname' />
         </div>

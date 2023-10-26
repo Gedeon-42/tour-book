@@ -33,6 +33,7 @@ function AddTour({openAddModal}) {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       });
+      window.location.reload()
 
       // Handle the response as needed, e.g., show a success message to the user
     } catch (error) {

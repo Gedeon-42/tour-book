@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaGem, FaMoon, FaSun } from 'react-icons/fa'
 import { FiSettings} from 'react-icons/fi'
 import profile from '../../assets/images/riyad.jpg'
 import { FaBars } from 'react-icons/fa'
+import LargeSidebar from './LargeSidebar'
 function AdminNav() {
+  const[menu,setMenu]= useState(false)
+  function openMenu(){
+    setMenu(!menu)
+  }
   return (
-    <div className='admin-nav'>
+    <>
+        {menu?<LargeSidebar openMenu={openMenu}/>:(
+      <div className='admin-nav'>
       <div className='bars-name-div'>
-      <FaBars className='sidebar-bars'/>
+      <FaBars className='sidebar-bars' onClick={openMenu}/>
     <h1 className='admin-h1'>Hello Gedeon</h1>
       </div>
      
@@ -18,6 +25,9 @@ function AdminNav() {
   </div>
     </div>
     </div>
+      )}</>
+
+  
   )
 }
 

@@ -9,11 +9,13 @@ function DeleteTour({deleteModal,tour}) {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
+            
           })
           .then((response) => {
         
             console.log('Tour deleted successfully', response.data);
             deleteModal();
+            window.location.reload()
           })
           .catch((error) => {
             alert(error)

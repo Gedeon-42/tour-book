@@ -25,7 +25,8 @@ function EditTour({openmodal,tour}) {
     }) // Replace with your API endpoint
     .then((response) => {
       // Handle success, e.g., close the modal or show a success message
-      alert('user edited successfully')
+      alert('tour edited successfully')
+      window.location.reload()
       console.log('Tour updated successfully', response.data);
       openmodal(); // Close the modal
     })

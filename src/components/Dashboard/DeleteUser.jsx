@@ -12,7 +12,7 @@ function DeleteUser({deleteModal,user}) {
       })
       .then((response) => {
         alert('user deleted')
-    
+        window.location.reload()
         console.log('Tour deleted successfully', response.data);
         deleteModal();
       })

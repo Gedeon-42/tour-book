@@ -8,7 +8,7 @@ function Tourslide() {
   return (
     <div className='dived' >
       < div className="amazing-header">
-        <h1 >amazing destination</h1>
+        <h1 >amazing tours</h1>
         <h1> trending , best selling tours </h1>
         <h1>Fun destination</h1>
         </div>
