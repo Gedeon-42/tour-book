@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaGem, FaMoon, FaSun } from 'react-icons/fa'
+import { FaBell, FaEnvelope, FaGem, FaMoon, FaSun } from 'react-icons/fa'
 import { FiSettings} from 'react-icons/fi'
 import profile from '../../assets/images/riyad.jpg'
 import { FaBars } from 'react-icons/fa'
@@ -19,6 +19,8 @@ function AdminNav() {
       </div>
      
     <div className='admin-nav-right'>
+    <div className='settings'><FaEnvelope/></div>
+    <div className='settings'><FaBell/></div>
         <div className='settings'><FiSettings/></div>
         <div className="dark-light">
          <img  src={profile} className=''/>

@@ -33,13 +33,7 @@ export const links=[
         icon:<FaPlane/>,
 
 },
-{
-    id:4,
-    name:"campus",
-    component:"<Component/>",
-        icon:<FaCampground/>,
 
-},
 {
     id:5,
     name:"upcoming",

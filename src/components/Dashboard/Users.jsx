@@ -70,6 +70,7 @@ function Users() {
           <td className='cell'>{user.email}</td>
           <td className='cell'>{user.PhoneNumber}</td>
           <td className='cell'>{user.Location}</td>
+          <td className='cell'>{user.Role}</td>
           <td className='cell edit-cell'>
             <button className='btn-edit'  onClick={() => openEditModal(user)}><FaPen/></button>
             <button className='btn-delete' onClick={()=>openDeletemodal(user)}><FaTrash/></button>

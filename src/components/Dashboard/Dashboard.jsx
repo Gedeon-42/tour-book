@@ -5,10 +5,11 @@ import AdminNav from './AdminNav'
 import Sidebar from './Sidebar'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 function Dashboard() {
-  const{user,access_token}= useStateContext()
+  const{user,access_token,allusers}= useStateContext()
  if(!access_token){
     return <Navigate to='/login'/>
  }
+
   return (
   
     <div className='Dashboard-wrapper'>
@@ -16,7 +17,7 @@ function Dashboard() {
         <Sidebar/>
        
         < div className='mains'>
-        {/* <h1>{user.name}</h1> */}
+        
         <Outlet/>
         </div>
 

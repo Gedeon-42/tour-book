@@ -17,6 +17,7 @@ import Users from "./components/Dashboard/Users";
 import EditUser from "./components/Dashboard/EditUser";
 import DefaultLayout from "./components/Auth/DeafultLayout";
 import AddTour from "./components/Dashboard/AddTour";
+import Upcoming from "./components/Dashboard/Upcoming";
 
 const router = createBrowserRouter([
 
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
         {
             path:'/admin/places',
             element:<Places/>
+        },
+        {
+            path:'/admin/places',
+            element:<Upcoming/>
         },
         {
             path:'/admin/calendar',

@@ -38,8 +38,8 @@ align-items: center;
   font-size: 23px;
  }
 .admin-nav img{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 .sidebar-bars{
@@ -71,11 +71,21 @@ padding: 10px 20px;
 .sidebar-links a{
 display:  flex;
 align-items: center;
-gap: 20px;
+gap: 10px;
 text-decoration: none;
 color: rgb(0 0 0 /90%);
 text-transform: capitalize;
 font-size: 16px;
+padding: 5px;
+border-radius: 7px;
+transition: 0.5;
+}
+.side-bar-icons{
+  font-size: 16px;
+  color: rgb(67, 60, 60);
+}
+.sidebar-links a:hover{
+  background-color: rgba(63, 63, 63, 0.1);
 }
 .logout{
   display: flex;
@@ -145,15 +155,15 @@ font-size: 16px;
     gap: 3px;
 }
 .name-location2 h3{
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500;
     text-transform: capitalize;
 }
 .name-location2 p{
 font-size: 12px;
 }
 .envlope{
-    color: darkgray;
+    color: rgb(67, 60, 60);
 }
 .flex2{
     background-color: crimson;
@@ -525,7 +535,7 @@ gap: 20px;
 align-items: center;
 }
  .settings{
-  font-size: 20px;
+  font-size: 18px;
  }
 .admin-nav img{
   width: 40px;

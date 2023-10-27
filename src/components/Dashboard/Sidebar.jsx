@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './dashboard.css'
 import { links } from '../../assets/data/dashboarddata'
@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 import { FaAngleLeft, FaSignOutAlt } from 'react-icons/fa'
 
 function Sidebar() {
+  const [loading,setLoading]=useState(false)
   const handelLogout = ()=>{
+setLoading(true)
     localStorage.removeItem('token')
     window.location.reload()
   }
@@ -24,7 +26,7 @@ function Sidebar() {
           {links.map((i)=>(
             <div key={i.id} className='sidebar-links'>
             <Link to={`/admin/${i.name}`}>
-            <span>{i.icon}</span>
+            <span className='side-bar-icons'>{i.icon}</span>
             <span>{i.name}</span>
             </Link>
             </div>

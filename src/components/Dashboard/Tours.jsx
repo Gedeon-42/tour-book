@@ -16,7 +16,7 @@ function Tour1() {
   
    // function to open edit modal
    function openEditModal(tour) {
-    setSelectedTour(tour);
+    //setSelectedTour(tour);
     setEditedTour(tour)
     openmodal();
     console.log(tour)
