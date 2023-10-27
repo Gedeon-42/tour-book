@@ -2,13 +2,15 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 const stateContext = createContext({
-    user: null,
+    user: 'eric omondi',
     access_token: null,
     setUser: () => {},
     setToken: () => {},
 });
 export const ContextProvider = ({ children }) => {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState({
+        name:"john"
+    });
     const [access_token, _setToken] = useState(localStorage.getItem("token"));
     
     const [allusers,setAllUsers]=useState([])
@@ -30,6 +32,7 @@ const loginMutation = useMutation({
       },
       onSuccess: (data) => {
         console.log(data);
+        setUser(data.user)
         setToken(data.access_token)
         window.location.href = "/admin";
         

@@ -77,8 +77,12 @@ function Tour1() {
               <td className='tour-cell'>{tour.Duration}</td>
               <td className='tour-cell'>{tour.GroupTize}</td>
               <td className='tour-cell'>
-                <img src={tour.backdropImage} alt="" className='tour-image2' />
-                </td>
+  {editedTour && editedTour._id === tour._id ? (
+    <img src={editedTour.backdropImage} alt="" className='tour-image2' />
+  ) : (
+    <img src={tour.backdropImage} alt="" className='tour-image2' />
+  )}
+</td>
                 <td className='tour-cell'>${tour.Price}</td>
                  <td className='tour-cell edit-cell'>
                   <button className='btn-edit' onClick={() => openEditModal(tour)}><FaPen/></button>

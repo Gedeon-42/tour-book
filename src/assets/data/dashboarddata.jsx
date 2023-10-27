@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { FaCalendar, FaCampground, FaChartArea, FaChartBar, FaLocationArrow, FaMagento, FaPlane, FaPumpMedical, FaUser } from "react-icons/fa";
+import { FaCalendar, FaCampground, FaChartArea, FaChartBar, FaLocationArrow, FaMagento, FaPlane, FaPumpMedical, FaSignOutAlt, FaUser } from "react-icons/fa";
 import profile from '../images/riyad.jpg'
 import pixel1 from '../images/pixel1.jpeg'
 import riyad2 from '../images/riyad2.jpg'
@@ -68,6 +68,7 @@ export const links=[
         icon:<FaChartArea/>,
 
 },
+
 ]
 export const users = [
     {

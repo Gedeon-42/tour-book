@@ -79,7 +79,7 @@ setLoading(true)
             <input type="checkbox" className='check-box1' />remember me
             </div>
             
-            <button  className='btn-signup' type='submit'>{loading?<p>loading ...</p>:(<p>signup</p>)}</button>
+            <button  className='btn-signup' type='submit'>{loading?(<p className='loader-login'></p>):(<p>SignUp</p>)}</button>
             </div>
            
             <p className='message-p'>Already Registered?  <Link to='/login'>Login</Link></p>

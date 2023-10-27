@@ -92,22 +92,9 @@ function Login() {
             <input type="checkbox" className='check-box1' />remember me
             </div>
             
-            <button  className='btn-login' type='submit'>{loading?<p>loading ...</p>:(<p>login</p>)}</button>
+            <button  className='btn-login' type='submit'>{loading?(<p className='loader-login'></p>):(<p>login</p>)}</button>
             <p className='message-p'>Does not have account?  <Link to='/signup'>signup</Link></p>
     
-       {/* <fieldset >
-                <legend>or login with: </legend>
-                <div className='btn-google1'>
-                
-                <button type='button' className='btn-google'>
-                    <img src={google} className='google'/> google
-                </button>
-                <button type='button' className='btn-facebook'>
-                    <FaFacebook/>face book
-                </button>
-                </div>
-                
-            </fieldset> */}
        
         </form>
     </div>

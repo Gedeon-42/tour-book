@@ -14,7 +14,9 @@ function Dashboard() {
     <div className='Dashboard-wrapper'>
         <AdminNav/>
         <Sidebar/>
+       
         < div className='mains'>
+        {/* <h1>{user.name}</h1> */}
         <Outlet/>
         </div>
 

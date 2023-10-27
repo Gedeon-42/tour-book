@@ -77,6 +77,12 @@ color: rgb(0 0 0 /90%);
 text-transform: capitalize;
 font-size: 16px;
 }
+.logout{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
 .mains{
     margin-left: 200px;
     padding: 20px 40px;
@@ -396,6 +402,7 @@ border-radius: 50%;
     right: 0;
     bottom: 0;
     align-items: center;
+    height: 150vh;
 
   }
   .form-user{
@@ -567,8 +574,9 @@ align-items: center;
     right: 0;
     bottom: 0;
     align-items: center;
-height: 150vh;
+height: 200vh;
   }
+ 
   .form-user{
     display: flex;
     flex-direction: column;
@@ -613,3 +621,37 @@ height: 150vh;
     margin-bottom: 10px;
   }
 }
+.loading-indicator{
+  margin-left: 40%;
+  margin-top: 15%;
+width: 400px;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 40px;
+  z-index: 1000;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+  .edited-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
