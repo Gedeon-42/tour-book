@@ -361,7 +361,8 @@ border-radius: 50%;
 
   .tour-desc1{
     font-size: 15px;
-    color: darkgrey;
+    color: black;
+    font-weight: bold;
 
   }
   tr:nth-child(even) {

@@ -5,14 +5,11 @@ import { FaEnvelope, FaFacebook, FaInstagram, FaPhone, FaTwitter } from 'react-i
  import './navbar.css'
 import Navbanner from './Navbanner'
 import Modal from '../pages/Modal'
+import { useStateContext } from '../../assets/Context/ContextProvide'
 function Navbar() {
-  const[modal,setModal]=useState(false)
-  function openModal(){
-setModal((prevModal)=>!prevModal)
-  }
+const{openModal}=useStateContext()
   return (
     <>
-    {modal?<Modal openModal={openModal}/>:(
       <>
  <div className='navbar'>
  <div className="navbar-contact">
@@ -37,7 +34,7 @@ setModal((prevModal)=>!prevModal)
      </div>
      <Navbanner openModal={openModal}/>
      </>
-    )}
+    
    
     </>
   )

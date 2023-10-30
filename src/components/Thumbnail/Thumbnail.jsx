@@ -19,12 +19,10 @@ function Thumbnail() {
     setIndex(selectedIndex);
   };
   const handleNext = () => {
-    setDirection('next');
     setIndex((index + 1) % 3); // Replace 3 with the number of slides
   };
 
   const handlePrev = () => {
-    setDirection('prev');
     setIndex((index - 1 + 3) % 3); // Replace 3 with the number of slides
   };
 

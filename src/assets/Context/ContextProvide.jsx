@@ -83,15 +83,12 @@ const signupMutation = useMutation({
               
             });
     };
-   // fetch tours
-    // const fetchTours = ()=>{
-    //     axios.get(' https://events-planner.onrender.com/api/v1/Tours/ ')
-    //     .then(({data})=>{
-    //         setTours(data.data)
-    //     })
-
-    // }
-
+ 
+    //open modal in context provider
+    const[modal,setModal]=useState(false)
+    function openModal(){
+  setModal((prevModal)=>!prevModal)
+    }
 
     return (
         <stateContext.Provider
@@ -104,7 +101,10 @@ const signupMutation = useMutation({
                 setToken,
                 tours,
                 allusers,
-                setAllUsers
+                setAllUsers,
+                modal,
+                setModal,
+                openModal
 
               
             }}
