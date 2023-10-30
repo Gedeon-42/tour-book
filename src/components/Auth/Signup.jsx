@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate,} from 'react-router-dom'
 import chair from '../../assets/images/chair.jpg'
 import google from '../../assets/images/google1.png'
-import { FaFacebook } from 'react-icons/fa'
+import { FaAngleLeft, FaFacebook } from 'react-icons/fa'
 import axiosClent from '../../../axiosclient'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 import axiosClient from '../../../axiosclient'
@@ -52,6 +52,7 @@ setLoading(true)
   return (
     <div className='login-wrapper'>
         <div className="advenure-wrapper">
+        <Link to='/' style={{textDecoration:'none',color:"white"}}><FaAngleLeft/></Link>
         <h1>every day is adventure</h1>
         </div>
         

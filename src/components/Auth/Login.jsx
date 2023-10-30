@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import mount7 from '../../assets/images/mount7.jpg'
 import google from '../../assets/images/google1.png'
 import './auth.css'
-import { FaFacebook, FaGoogle } from 'react-icons/fa'
+import { FaAngleLeft, FaFacebook, FaGoogle } from 'react-icons/fa'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 
 function Login() {
@@ -73,6 +73,7 @@ function Login() {
     <>
         <div className='login-wrapper'>
         <div className="advenure-wrapper">
+            <Link to='/' style={{textDecoration:'none',color:"white"}}><FaAngleLeft/></Link>
         <h1>every day is like holiday</h1>
         </div>
 <div className="login-page">

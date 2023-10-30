@@ -22,7 +22,6 @@ function Tour() {
         </div>
         <div className="tour-content-wrapper">
             <div className="tour-location-wrapper">
-            
                 <div className="tour-location-form">
                     <div className="sort-by">sort by</div>
                     <form action="">

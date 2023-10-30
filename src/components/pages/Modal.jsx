@@ -18,7 +18,6 @@ function Modal({openModal}) {
         <Link to='/'>About</Link>
         <Link to='/login'>login</Link>
         <Link to='/tour'>tour</Link>
-        <Link to='/tour'>tour detail</Link>
         <Link to='/contact'>contact us</Link>
     </div>
     <div className="modal-icons">
