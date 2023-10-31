@@ -31,11 +31,11 @@ const{backdropImage,destination}=individualTour
           <div className="review">review</div>
         </div>
         <div className="offer-detail-amount">
-          <h1>italy</h1>
+          <h1>{destination}</h1>
           <div className="amount-perperson">
-            <p className='amount-1'>
+            <h1 className='amount-1'>
               $123
-            </p>
+            </h1>
             <p className='amount-2'>per person</p>
           </div>
         </div>
@@ -86,39 +86,20 @@ const{backdropImage,destination}=individualTour
         </div>
           </div>
         
-        <div className="tour-form-wraper">
-                <div className="tour-form1">
-                    <form action="">
-                    <h1 className='tour-find'>find your tour</h1>
-                    <div className="tour-search">
-            <div className="form-tour-icons"><FaSearch/></div>
-          <input type="text"placeholder='search tour' />
-          </div>
-          <div className="tour-search">
-            <div className="form-tour-icons"><ImLocation2/></div>
-          <input type="text"placeholder='where to ?' />
-          </div>
-          <div className="tour-search">
-            <div className="form-tour-icons"><FaCalendar/></div>
-            <select>
-            <option value="" disabled> Where to?</option>
-            <option value="january">january</option>
-            <option value="february">february</option>
-            <option value="march">march</option>
-           
-          </select>
-          </div>
-          
-            <label htmlFor="">Duration</label>
-            <select>
-            <option value="" disabled> any</option>
-            <option value="january">1 day tour</option>
-            <option value="february">2-4 day tour</option>
-            <option value="march">march</option>
-            <option value="april">april</option>
-            
-          </select>
-         
+        <div className="detail-form-wraper">
+                <div className="detail-tour-form1">
+                    <form action="" className='detail-form'>
+                    <h1 className='tour-find'>Book this tour</h1>
+                  <input type="text" name="fullname" placeholder='Full Names' id="" />
+                  <input type="email" name="email" placeholder='email' id="" />
+                  <input type="number" name="phone" placeholder='phone' id="" />
+                  <input type="date" name="name"  id="" />
+                  <input type="number" name="ticket" placeholder='number of ticket' id="" />
+                  <textarea name="message" id="" cols="20" rows="5" placeholder='message'></textarea>
+                  <div className="detail-check">
+                  <input type="checkbox" name="" id="" /> <span>check Availablity</span>
+                  </div>
+                  <button className='btn-booking'>Book now</button>
                     </form>
                 </div>
                 <div className="tour-form2">

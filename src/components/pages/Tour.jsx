@@ -17,7 +17,7 @@ function Tour() {
     <div className='tour-wrapper'>
         
         <div className='tour-container'>
-        <img src={pixel} alt="" />
+        <img src={mountain} alt="" />
         <div className="tour-banner"><h1>Tour list</h1></div>
         </div>
         <div className="tour-content-wrapper">
@@ -80,7 +80,7 @@ function Tour() {
           
            </div>
      </div>
-            <div className="tour-form-wraper">
+            <div className="detail-form-wraper">
                 <div className="tour-form1">
                     <form action="">
                     <h1 className='tour-find'>find your tour</h1>

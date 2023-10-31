@@ -203,11 +203,13 @@ width: 400px;
   
   .tour-content-wrapper{
     display: flex;
-    padding:5px 50px ;
+    padding:20px 50px ;
     position: relative;
   }
   .tour-location-wrapper{
     flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
   }
   .tour-form-wraper{
     flex-basis: 40%;
@@ -336,7 +338,7 @@ display: flex;
 .tour-form1{
     display: flex;
     flex-direction: column;
-    padding: 2px 20px;
+    padding: 10px 20px;
     box-shadow: var(--box-shadow);
 
 }
@@ -374,11 +376,19 @@ display: flex;
     display: flex;
     flex-direction: column;
     padding:20px;
-    height: 300px;
+    height: 200px;
     z-index: 100px;
     box-shadow: var(--box-shadow);
     background-color:whitesmoke
 }
+.tour-form2 ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+}
+
 
 .tour-form3{
     display: flex;
@@ -393,11 +403,16 @@ display: flex;
     width: 300px;
 }
 /* tour detail styles */
+.tour-banner{
+  text-transform: capitalize;
+}
 .detail-content-wrapper{
   display: flex;
   position: relative;
   margin-top: 30px;
   height: 200vh;
+  gap: 20px;
+  padding: 5px 40px;
 }
 .detail-content-wrapper1{
   flex-basis: 60%;
@@ -405,24 +420,30 @@ display: flex;
 }
 .detail-location-desc{
   display: flex;
+  margin: 20px 1px;
 }
 .information,.tour-plan,.location,.gallery,.review{
-  padding: 20px;
-  border: 1px solid black;
+  padding: 10px;
+  border: 1px solid gray;
   width: 150px;
+  text-transform: capitalize;
 }
 .offer-detail-amount{
   display: flex;
   justify-content: space-between;
+  
 }
 .offer-detail-amount h1{
   font-size: 26px;
   flex-basis: 60%;
+  text-transform: capitalize;
 }
 .amount-perperson{
   width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -432,7 +453,7 @@ display: flex;
   font-size: 16px;
   font-weight: bold;
   position: absolute;
-  top:5px;
+  top:15px;
   left: 20px;
   color: var(--light-white);
   border-bottom: 1px solid lightgray;
@@ -469,7 +490,56 @@ table td{
   border: 1px solid lightgrey;
   width: 50%;
 }
-
+/* tour detail form */
+.detail-form-wraper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-basis: 40%;
+  padding: 20px;
+}
+.detail-tour-form1{
+  box-shadow: var(--box-shadow);
+}
+.detail-form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.detail-form input{
+  padding: 10px 30px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  width: 300px;
+}
+.detail-form input[type=checkbox]{
+  padding: 10px 30px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  width: 40px;
+  height: 20px;
+}
+.detail-check{
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.detail-form textarea{
+  width: 300px;
+  padding: 10px 30px;
+  border-radius: 7px;
+  border: 1px solid gray;
+}
+.btn-booking{
+  width: 300px;
+  padding: 10px 30px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  color: white;
+  background-color: var(--yellow-color);
+  font-size: 20px; 
+}
 .tour-location-container-home{
   display: flex;
   gap: 40px;
@@ -655,6 +725,7 @@ text-transform: capitalize;
 .amazing-container img{
   height: 350px;
 }
+/* tour responsivensess */
 .tour-container{
   height: 50vh;
   margin-top: 70px;
@@ -678,40 +749,50 @@ text-transform: capitalize;
 }
 
 .tour-content-wrapper{
-  display: block;
-height: auto;;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .tour-location-form{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: 10px;
 }
+.tour-location-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .sort-by{
-width: 200px;
+width: 100%;
   padding: 7px;
   border: 1px solid black;
   height: 40px;
   text-align: center;
-  width: 250px;
+  text-transform: capitalize;
 }
-.tour-location-form form {
-display: flex;
-}
+
 .tour-location-form form select {
       padding: 7px;
-      width: 250px;
+      width: 100%;
       height: 40px;
+      text-transform: capitalize;
     }
 .tour-location-container{
   display: flex;
   flex-direction: column;
+  padding: 20px 1px;
+  padding: 10px;
 }
 .tour-loaction-content{
   box-shadow: var(--box-shadow);
+  
 }
 .loacation-img{
-      width: 100%;
+      width: 350px;
       height: 200px;
       margin-bottom: 20px;
     }
@@ -719,7 +800,6 @@ display: flex;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 20px;
   border-left: 2px solid var(--yellow-color);
   position: relative;
 } 
@@ -780,7 +860,7 @@ display: flex;
   font-size: 25px;
 }
 .btn-book{
-  padding: 10px;
+  padding: 7px;
   color: var(--light-white);
   background-color: var(--yellow-color);
   outline: 0;
@@ -789,12 +869,12 @@ display: flex;
   text-decoration: none;
 }
 .tour-form-wraper{
-  display: block;
+  display:flex;
   flex-direction: column;
   padding: 40px;
   background: whitesmoke;
   box-shadow: var(--box-shadow);
-  position: absolute;
+  gap: 20px;
   
 }
 .tour-form1{
@@ -802,7 +882,7 @@ display: flex;
   flex-direction: column;
   padding: 2px 20px;
   box-shadow: var(--box-shadow);
-  
+  height: 300px;
 
 }
 .tour-find{
@@ -842,7 +922,7 @@ display: flex;
   z-index: 100px;
   box-shadow: var(--box-shadow);
   background-color:whitesmoke;
-  height: 150px;
+  
 }
 
 .tour-form3{
@@ -850,7 +930,7 @@ display: flex;
   flex-direction: column;
   padding: 10px;
   z-index: 100px;
-  height: 150px;
+  height: 200px;
   background-color: var(--yellow-color);
   color: var(--light-white);
 }

@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import campus from '../../assets/images/contact2.jpg'
+import axios from 'axios'
+import { useStateContext } from '../../assets/Context/ContextProvide'
 function  Contact() {
+  const [email,setEmail] = useState('')
+  const[body,setBody] = useState('')
+  const[loading,setLoading]=useState(false)
+  const{ContactMutation}=useStateContext()
+
+  const payload = {email,body}
+ function handleContact(e){
+  e.preventDefault()
+  setLoading(true)
+  
+ContactMutation.mutate(payload)
+ }
+
   return (
     <div className='contact-wrapper'>
       <div className="contact-image-wrapper">
@@ -9,19 +24,19 @@ function  Contact() {
       <div className="contact-flex-wrapper">
         <div className="contac-flex1">
           <div className="contact-form-wrapper2">
-            <form action="" method="post" className='contact-form1'>
+            <form action="" onSubmit={handleContact} method="post" className='contact-form1'>
               <div className="contact-input">
                 <input type="text" placeholder='Full Name' />
-                <input type="email" placeholder='Email' />
+                <input type="email" placeholder='Email' onChange={(e)=>setEmail(e.target.value)} />
               </div>
               <div className="contact-input">
                 <input type="number" placeholder='Phone' />
                 <input type="text" placeholder='Service' />
               </div>
               <div className="contact-textarea">
-                <textarea name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder='Message' onChange={(e)=>setBody(e.target.value)}></textarea>
               </div>
-              <button className='btn-contact'>Submit</button>
+              <button className='btn-contact'>{loading?<p>loading...</p>:(<p>submit</p>)}</button>
             </form>
           </div>
         </div>

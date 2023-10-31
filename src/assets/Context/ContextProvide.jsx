@@ -2,14 +2,14 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 const stateContext = createContext({
-    user: 'eric omondi',
+    user: null,
     access_token: null,
     setUser: () => {},
     setToken: () => {},
 });
 export const ContextProvider = ({ children }) => {
     const [user, setUser] = useState({
-        name:"john"
+        _id:''
     });
     const [access_token, _setToken] = useState(localStorage.getItem("token"));
     
@@ -52,6 +52,20 @@ const signupMutation = useMutation({
     }
 })
 
+const ContactMutation = useMutation({
+    mutationFn:async(data)=>{
+        const res = await axios.post('https://events-planner.onrender.com/api/v1/contact',data)
+        return res.data
+    },
+    onError:(error)=>{
+        console.log(error.response.data.message)
+        alert(error)
+    },onSuccess:(data)=>{
+        alert('message sent')
+        console.log(data)
+        window.location.reload()
+    }
+})
     const setToken = (access_token) => {
         _setToken(access_token);
         if (access_token) {
@@ -83,6 +97,29 @@ const signupMutation = useMutation({
               
             });
     };
+    useEffect(() => {
+        if ( user._id) {
+          getUser();
+        }
+      }, [user]);
+      
+      const getUser = () => {
+        
+        axios
+            .get(`https://events-planner.onrender.com/api/v1/auth/User/${user._id}`,{
+              headers:{
+         Authorization:`Bearer ${localStorage.getItem('token')}`
+              }
+            })
+            .then(({ data }) => {
+                alert('user fetched')
+                setUser(data.data);
+                
+            })
+            .catch((error) => {
+              alert(error)
+            });
+    };
  
     //open modal in context provider
     const[modal,setModal]=useState(false)
@@ -97,6 +134,7 @@ const signupMutation = useMutation({
                 setUser,
                 loginMutation,
                 signupMutation,
+                ContactMutation,
                 access_token,
                 setToken,
                 tours,
