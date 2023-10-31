@@ -7,8 +7,7 @@ import LargeSidebar from './LargeSidebar'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 import axios from 'axios'
 function AdminNav() {
-  const{ user,setUser}=useStateContext()
-  
+  const{loggedUser}=useStateContext()
   const[menu,setMenu]= useState(false)
   function openMenu(){
     setMenu(!menu)
@@ -20,7 +19,7 @@ function AdminNav() {
       <div className='admin-nav'>
       <div className='bars-name-div'>
       <FaBars className='sidebar-bars' onClick={openMenu}/>
-    <h1 className='admin-h1'>Hello {user.email}</h1>
+    <h1 className='admin-h1'>Hello <span>{loggedUser?.FullNames}</span></h1>
       </div>
      
     <div className='admin-nav-right'>

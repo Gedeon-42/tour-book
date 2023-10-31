@@ -1,19 +1,31 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { useJwt } from "react-jwt";
+
 const stateContext = createContext({
-    user: null,
+    user: '',
     access_token: null,
     setUser: () => {},
     setToken: () => {},
 });
 export const ContextProvider = ({ children }) => {
+    let url = 'https://events-planner.onrender.com'
     const [user, setUser] = useState({
         _id:''
     });
     const [access_token, _setToken] = useState(localStorage.getItem("token"));
     
     const [allusers,setAllUsers]=useState([])
+    const [notification, _setNotification] = useState('');
+    const setNotification = message => {
+        _setNotification(message);
+    
+        setTimeout(() => {
+          _setNotification('')
+        }, 5000)
+      }
+    
     const {data:tours}= useQuery({
         queryKey: ["tours"],
         queryFn:async ()=>{
@@ -34,7 +46,16 @@ const loginMutation = useMutation({
         console.log(data);
         setUser(data.user)
         setToken(data.access_token)
-        window.location.href = "/admin";
+
+        if (data.data.role ==="admin") {
+            window.location.href = "/admin";
+            
+        }
+
+        else{
+            window.location.href = "/";
+
+        }
         
       },
 })
@@ -66,6 +87,43 @@ const ContactMutation = useMutation({
         window.location.reload()
     }
 })
+  
+
+const  {decodedToken ,isExpired} =  useJwt(localStorage.getItem("token"))
+
+console.log(decodedToken?._id);
+const {data:loggedUser} = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+
+        if (decodedToken) {
+            const res = await axios.get(
+                url +
+                  `/api/v1/auth/User/${
+                   decodedToken?._id
+                  }`,
+                {
+                  headers: {
+                    Authorization:`Bearer ${localStorage.getItem('token')}`,
+                  },
+                }
+              );
+              return res.data.data;
+        }
+   
+    },
+    onError: (error) => {
+      console.log(error.response.data.message);
+    },
+    onSuccess: (data) => {
+      console.log(data);
+    },
+  });
+
+  console.log(loggedUser);
+
+
+
     const setToken = (access_token) => {
         _setToken(access_token);
         if (access_token) {
@@ -97,30 +155,8 @@ const ContactMutation = useMutation({
               
             });
     };
-    useEffect(() => {
-        if ( user._id) {
-          getUser();
-        }
-      }, [user]);
+  
       
-      const getUser = () => {
-        
-        axios
-            .get(`https://events-planner.onrender.com/api/v1/auth/User/${user._id}`,{
-              headers:{
-         Authorization:`Bearer ${localStorage.getItem('token')}`
-              }
-            })
-            .then(({ data }) => {
-                alert('user fetched')
-                setUser(data.data);
-                
-            })
-            .catch((error) => {
-              alert(error)
-            });
-    };
- 
     //open modal in context provider
     const[modal,setModal]=useState(false)
     function openModal(){
@@ -137,12 +173,15 @@ const ContactMutation = useMutation({
                 ContactMutation,
                 access_token,
                 setToken,
+                loggedUser,
                 tours,
                 allusers,
                 setAllUsers,
                 modal,
                 setModal,
-                openModal
+                openModal,
+                notification,
+                setNotification
 
               
             }}
