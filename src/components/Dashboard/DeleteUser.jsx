@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useStateContext } from '../../assets/Context/ContextProvide';
-import Notiflix from 'notiflix';
+import Notiflix,{Report} from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 function DeleteUser({deleteModal,user}) {
   const[loading,setLoading] = useState(false)
@@ -17,11 +17,19 @@ function DeleteUser({deleteModal,user}) {
       })
       .then((response) => {
         //alert('user deleted')
-        setNotification('User was successfully deleted')
-        Notiflix.Notify.success('Sol lucet omnibus');
-        window.location.reload()
+        //setNotification('User was successfully deleted')
+        //Notify.success('user deleted');
+        Report.success('user','user deleted','okey',()=>{
+          
+        });
         console.log('Tour deleted successfully', response.data);
         deleteModal();
+setLoading(false)
+
+setTimeout(() => {
+  
+  window.location.reload()
+}, 4000);
       })
       .catch((error) => {
         alert(error)

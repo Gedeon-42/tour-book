@@ -25,7 +25,7 @@ export const ContextProvider = ({ children }) => {
           _setNotification('')
         }, 5000)
       }
-    
+    // fetching tours 
     const {data:tours}= useQuery({
         queryKey: ["tours"],
         queryFn:async ()=>{
@@ -33,6 +33,21 @@ export const ContextProvider = ({ children }) => {
             return res.data.data
         }
     }) 
+    //fetching booking
+    const {data:books}= useQuery({
+        queryKey: ["books"],
+        queryFn:async ()=>{
+           const res = await axios.get(' https://events-planner.onrender.com/api/v1/booking/ ',
+           {
+            headers:{
+       Authorization:`Bearer ${localStorage.getItem('token')}`
+            }
+          }
+           )
+            return res.data.data
+        }
+    })
+
 const loginMutation = useMutation({
     mutationFn: async (data) => {
         //const res = await axios.post(url + "auth/login", data);
@@ -168,6 +183,7 @@ const {data:loggedUser} = useQuery({
             value={{
                 user,
                 setUser,
+                books,
                 loginMutation,
                 signupMutation,
                 ContactMutation,

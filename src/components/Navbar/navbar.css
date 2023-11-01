@@ -91,12 +91,13 @@ background:var(--light-white);
    
 }
 .btn-banner{
-    padding: 20px 10px;
-    background: var(--yellow-color);
+    padding:5px;
+    background-color: var(--yellow-color);
     width: 100px;
     border: 0;
     outline: 0;
-    color: var(--light-white);
+    color: black;
+    font-size: 17px;
     border-radius: 12px;
 }
 .btn-search{

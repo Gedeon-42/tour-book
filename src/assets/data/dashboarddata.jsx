@@ -20,13 +20,6 @@ export const links=[
 
 },
 {
-    id:2,
-    name:"places",
-    component:"<Component/>",
-        icon:<FaLocationArrow />,
-
-},
-{
     id:3,
     name:"tour",
     component:"<Component/>",
@@ -34,13 +27,7 @@ export const links=[
 
 },
 
-{
-    id:5,
-    name:"upcoming",
-    component:"<Component/>",
-        icon:<FaPumpMedical/>,
 
-},
 {
     id:6,
     name:"users",
@@ -50,7 +37,7 @@ export const links=[
 },
 {
     id:7,
-    name:"calendar",
+    name:"booking",
     component:"<Component/>",
         icon:<FaCalendar/>,
 

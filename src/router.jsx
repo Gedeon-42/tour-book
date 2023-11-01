@@ -18,6 +18,8 @@ import EditUser from "./components/Dashboard/EditUser";
 import DefaultLayout from "./components/Auth/DeafultLayout";
 import AddTour from "./components/Dashboard/AddTour";
 import Upcoming from "./components/Dashboard/Upcoming";
+import BookTour from "./components/Dashboard/BookTour";
+import NotFound from "./components/pages/NotFound";
 
 const router = createBrowserRouter([
 
@@ -87,8 +89,8 @@ const router = createBrowserRouter([
             element:<Upcoming/>
         },
         {
-            path:'/admin/calendar',
-            element:<Calendar/>
+            path:'/admin/booking',
+            element:<BookTour/>
         },
         {
             path:'/admin/users',
@@ -103,6 +105,11 @@ const router = createBrowserRouter([
             element:<AddTour/>
         }
     ]
+   
+},
+{
+    path:'*',
+    element:<NotFound/>
 }
 
  

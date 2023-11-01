@@ -4,15 +4,39 @@ import { FaCalendar, FaSearch } from 'react-icons/fa'
 import { ImLocation2 } from 'react-icons/im'
 import { useState } from 'react'
 import { useStateContext } from '../../assets/Context/ContextProvide'
+import axios from 'axios'
 function TourDetail() {
-  const{tours}=useStateContext()
+  const{tours,allusers,loggedUser}=useStateContext()
   
+  console.log(loggedUser?._id)
   const {_id} = useParams()
-  const individualTour = tours.find(tour => tour._id === _id);
-const{backdropImage,destination}=individualTour
+  const individualTour = tours?.find(tour => tour._id === _id);
+const{backdropImage,destination,}=individualTour
   if (!individualTour) {
     // Handle the case where the tour is not found (e.g., show a not found message)
     return <div>Tour not found.</div>;
+  }
+
+  const [paymentMethod,setPaymentMethod] = useState('')
+  const [tourID,setTourId]=useState(_id)
+  const[userID,setUserId]=useState(loggedUser._id)
+  const payload = {tourID,paymentMethod,userID}
+  const handleBooking = (e)=>{
+e.preventDefault()
+console.log(payload)
+axios.post('https://holiday-planner.onrender.com/api/v1/booking/createBooking',payload,{
+  headers: {
+    "Content-Type": "multipart/form-data",
+    Authorization: `Bearer ${localStorage.getItem('token')}`
+  }
+}).then(({data})=>{
+  setTourId(data._id)
+  setUserId(data._id)
+  alert('succsess')
+}).catch((error)=>{
+  alert(error)
+  console.log(error)
+})
   }
   return (
     <div className='tourdetail-wrapper'>
@@ -88,13 +112,13 @@ const{backdropImage,destination}=individualTour
         
         <div className="detail-form-wraper">
                 <div className="detail-tour-form1">
-                    <form action="" className='detail-form'>
+                    <form action="" className='detail-form' onSubmit={handleBooking}>
                     <h1 className='tour-find'>Book this tour</h1>
                   <input type="text" name="fullname" placeholder='Full Names' id="" />
                   <input type="email" name="email" placeholder='email' id="" />
                   <input type="number" name="phone" placeholder='phone' id="" />
                   <input type="date" name="name"  id="" />
-                  <input type="number" name="ticket" placeholder='number of ticket' id="" />
+                  <input type="text" name="paymentmethod" onChange={(e)=>setPaymentMethod(e.target.value)} placeholder='paymethod method' id="" />
                   <textarea name="message" id="" cols="20" rows="5" placeholder='message'></textarea>
                   <div className="detail-check">
                   <input type="checkbox" name="" id="" /> <span>check Availablity</span>
