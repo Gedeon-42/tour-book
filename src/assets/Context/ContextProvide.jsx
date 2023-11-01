@@ -17,6 +17,7 @@ export const ContextProvider = ({ children }) => {
     const [access_token, _setToken] = useState(localStorage.getItem("token"));
     
     const [allusers,setAllUsers]=useState([])
+    const [allcontacts,setContacts]=useState([])
     const [notification, _setNotification] = useState('');
     const setNotification = message => {
         _setNotification(message);
@@ -48,6 +49,30 @@ export const ContextProvider = ({ children }) => {
         }
     })
 
+    // fetching contacts
+
+    // const {data:contacts}= useQuery({
+    //     queryKey: ["contacts"],
+    //     queryFn:async ()=>{
+    //        const res = await axios.get('https://holiday-api-zj3a.onrender.com/api/v1/cont/contact/all',
+    //        {
+    //         headers:{
+    //    Authorization:`Bearer ${localStorage.getItem('token')}`
+    //         }
+    //       }
+    //        ).then(({data})=>{
+    //         console.log(data)
+    //         alert('success')
+    //        })
+          
+    //         return res.data
+    //     }
+    // })
+
+
+
+
+
 const loginMutation = useMutation({
     mutationFn: async (data) => {
         //const res = await axios.post(url + "auth/login", data);
@@ -74,6 +99,7 @@ const loginMutation = useMutation({
         
       },
 })
+
 const signupMutation = useMutation({
     mutationFn:async(data)=>{
         const res =  await axios.post('https://events-planner.onrender.com/api/v1/auth/signup', data)
@@ -90,7 +116,7 @@ const signupMutation = useMutation({
 
 const ContactMutation = useMutation({
     mutationFn:async(data)=>{
-        const res = await axios.post('https://events-planner.onrender.com/api/v1/contact',data)
+        const res = await axios.post('https://holiday-api-zj3a.onrender.com/api/v1/cont/contact',data)
         return res.data
     },
     onError:(error)=>{
@@ -99,14 +125,14 @@ const ContactMutation = useMutation({
     },onSuccess:(data)=>{
         alert('message sent')
         console.log(data)
-        window.location.reload()
+        //window.location.reload()
     }
 })
   
 
 const  {decodedToken ,isExpired} =  useJwt(localStorage.getItem("token"))
 
-console.log(decodedToken?._id);
+//console.log(decodedToken?._id);
 const {data:loggedUser} = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -135,7 +161,7 @@ const {data:loggedUser} = useQuery({
     },
   });
 
-  console.log(loggedUser);
+  //console.log(loggedUser);
 
 
 
@@ -151,6 +177,7 @@ const {data:loggedUser} = useQuery({
     useEffect(()=>{
         getUsers()
         //fetchTours()
+        getContacts()
     },[])
     // get all users
     const getUsers = () => {
@@ -170,6 +197,25 @@ const {data:loggedUser} = useQuery({
               
             });
     };
+      const getContacts= () => {
+    
+        axios
+            .get('https://holiday-api-zj3a.onrender.com/api/v1/cont/contact/all',{
+              headers:{
+         Authorization:`Bearer ${localStorage.getItem('token')}`
+              }
+            })
+            .then(({ data }) => {
+            alert('success')
+  console.log(data)
+                setContacts(data);
+                
+            })
+            .catch((error) => {
+              alert(error)
+            });
+    };
+  
   
       
     //open modal in context provider
@@ -187,6 +233,8 @@ const {data:loggedUser} = useQuery({
                 loginMutation,
                 signupMutation,
                 ContactMutation,
+                allcontacts,
+                setContacts,
                 access_token,
                 setToken,
                 loggedUser,

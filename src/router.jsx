@@ -20,6 +20,7 @@ import AddTour from "./components/Dashboard/AddTour";
 import Upcoming from "./components/Dashboard/Upcoming";
 import BookTour from "./components/Dashboard/BookTour";
 import NotFound from "./components/pages/NotFound";
+import Contactdash from "./components/Dashboard/Contactdash";
 
 const router = createBrowserRouter([
 
@@ -81,8 +82,8 @@ const router = createBrowserRouter([
             element:<Tour1/>
         },
         {
-            path:'/admin/places',
-            element:<Places/>
+            path:'/admin/contact',
+            element:<Contactdash/>
         },
         {
             path:'/admin/places',
