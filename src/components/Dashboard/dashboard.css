@@ -100,7 +100,6 @@ transition: 0.5;
 .admin-home{
     display: flex;
     gap: 20px;
-    width: 100%;
 }
 .box{
     padding: 20px;

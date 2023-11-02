@@ -18,13 +18,13 @@ const{backdropImage,destination,}=individualTour
   }
 
   const [paymentMethod,setPaymentMethod] = useState('')
-  const [tourID,setTourId]=useState(_id)
-  const[userID,setUserId]=useState(loggedUser._id)
-  const payload = {tourID,paymentMethod,userID}
+  const [tourId,setTourId]=useState(_id)
+  const[userId,setUserId]=useState(loggedUser._id)
+  const payload = {tourId,paymentMethod,userId}
   const handleBooking = (e)=>{
 e.preventDefault()
 console.log(payload)
-axios.post('https://holiday-planner.onrender.com/api/v1/booking/createBooking',payload,{
+axios.post('https://events-planner.onrender.com/api/v1/booking/book',payload,{
   headers: {
     "Content-Type": "multipart/form-data",
     Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -32,7 +32,7 @@ axios.post('https://holiday-planner.onrender.com/api/v1/booking/createBooking',p
 }).then(({data})=>{
   setTourId(data._id)
   setUserId(data._id)
-  alert('succsess')
+ // alert('succsess')
 }).catch((error)=>{
   alert(error)
   console.log(error)

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-
+import Notiflix,{Report} from 'notiflix';
 function DeleteTour({deleteModal,tour}) {
   const[loading,setLoading] = useState(false)
     const handleDelete = () => {
@@ -15,8 +15,16 @@ setLoading(true)
           .then((response) => {
         
             //console.log('Tour deleted successfully', response.data);
+            Report.success('user','user deleted','okey',()=>{
+          
+            });
             deleteModal();
             window.location.reload()
+            setLoading(false)
+            setTimeout(() => {
+  
+              window.location.reload()
+            }, 4000);
           })
           .catch((error) => {
             alert(error)

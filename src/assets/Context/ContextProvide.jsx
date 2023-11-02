@@ -9,6 +9,11 @@ const stateContext = createContext({
     setUser: () => {},
     setToken: () => {},
 });
+const initialState = {
+  message:false,
+  notification:false,
+
+}
 export const ContextProvider = ({ children }) => {
     let url = 'https://events-planner.onrender.com'
     const [user, setUser] = useState({
@@ -51,24 +56,7 @@ export const ContextProvider = ({ children }) => {
 
     // fetching contacts
 
-    // const {data:contacts}= useQuery({
-    //     queryKey: ["contacts"],
-    //     queryFn:async ()=>{
-    //        const res = await axios.get('https://holiday-api-zj3a.onrender.com/api/v1/cont/contact/all',
-    //        {
-    //         headers:{
-    //    Authorization:`Bearer ${localStorage.getItem('token')}`
-    //         }
-    //       }
-    //        ).then(({data})=>{
-    //         console.log(data)
-    //         alert('success')
-    //        })
-          
-    //         return res.data
-    //     }
-    // })
-
+   
 
 
 
@@ -121,9 +109,9 @@ const ContactMutation = useMutation({
     },
     onError:(error)=>{
         console.log(error.response.data.message)
-        alert(error)
+        //alert(error)
     },onSuccess:(data)=>{
-        alert('message sent')
+        //alert('message sent')
         console.log(data)
         //window.location.reload()
     }
@@ -206,13 +194,13 @@ const {data:loggedUser} = useQuery({
               }
             })
             .then(({ data }) => {
-            alert('success')
+            //alert('success')
   console.log(data)
                 setContacts(data);
                 
             })
             .catch((error) => {
-              alert(error)
+              //alert(error)
             });
     };
   
