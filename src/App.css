@@ -56,13 +56,13 @@ text-transform: capitalize;
     line-height: 30px;
 }
 .btn-about{
-    padding: 20px;
+    padding: 7px;
     background: var(--yellow-color);
     color: var(--light-white);
     outline: 0;
     text-decoration: none;
     border: 0;
-    width: 150px;
+    width: 100px;
     border-radius: 7px;
     text-transform: capitalize;
 }

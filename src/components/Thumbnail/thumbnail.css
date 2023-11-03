@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 html{
-    font-family: "Inter",sans-serif;
+    /* font-family: "Inter",sans-serif; */
   }
 :root{
     --yellow-color:#C29D59;
@@ -23,17 +23,18 @@ html{
 .thumb-container{
 position: relative;
 }
-.thumb-content{
-    top: 20%;
-    right: 200px;
-    left: 200px;
-    position: absolute;
-    align-items: center;
-    
+.carousel-caption{
+    display: none;
 }
+.custom-coursel-capt{
+    display: block;
+    position: absolute;
+    top: 100px;
+}
+
 .thumb-desc1{
     color: var(--light-white);
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     text-transform: capitalize;
 }
@@ -41,12 +42,11 @@ position: relative;
     color: var(--light-white);
     border: 0;
     outline: 0;
-    color: var(--light-white);
-    font-size: 50px;
+    font-size: 30px;
     background-color: var(--yellow-color);
     padding: 10px 60px;
     width: 500px;
-    margin-left: 200px;
+    margin-left: auto;
     text-transform: capitalize;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -56,13 +56,13 @@ position: relative;
     text-transform: capitalize;
     color: var(--light-white);
     line-height: 30px;
-    max-width: 600px;
-    margin-left: 200px;
-    margin-top: 10px;
+   margin-left: auto;
+   margin-right: auto;
 }
-.thumb-container img{
-max-height: 100vh;
+.slide-show-img{
+height: 90vh;
 width: 100%;
+/* filter: sepia(100%); */
 }
 /* form styles for thumbnail */
 .thumb-form{
@@ -152,7 +152,7 @@ width: 100%;
     padding-left: 40px;
     padding-top: 30px;
     width: 50px;
-    height: 80px;
+    height: 70px;
   }
   .custom-prev p{
     transform: rotate(-90deg);
@@ -166,7 +166,7 @@ width: 100%;
     color: var(--light-white);
     text-transform: capitalize;
     padding-right: 40px;
-    height: 80px;
+    height: 70px;
     width: 50px;
     right: 0;
   }

@@ -15,8 +15,8 @@ const [loading,setLoading]=useState(false)
       formData.append('destination', data.destination);
       formData.append('Duration', data.Duration);
       formData.append('Description', data.Description);
-     formData.append('backdropImage', data.backdropImage[0]);
-    formData.append('gallery', data.gallery[0]);
+      formData.append('backdropImage', data.backdropImage[0]);
+      formData.append('gallery', data.gallery[0]);
       formData.append('GroupTize', data.GroupTize);
       formData.append('Seats', data.Seats);
       formData.append('Price', data.Price);
@@ -27,7 +27,6 @@ const [loading,setLoading]=useState(false)
       formData.append('fromMonth', data.fromMonth);
       formData.append('departureTime', data.departureTime);
       formData.append('toMonth', data.toMonth);
-
       const response = await axios.post('https://events-planner.onrender.com/api/v1/Tours/addTour', formData, {
         headers: {
           "Content-Type": "multipart/form-data",

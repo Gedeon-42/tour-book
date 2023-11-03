@@ -5,8 +5,8 @@ import { FaCalendar,  FaFlag, } from 'react-icons/fa'
 import{ImLocation2,}from 'react-icons/im'
 import Carousel from 'react-bootstrap/Carousel';
 import cal from '../../assets/images/cal.jpg'
-import pixel1 from '../../assets/images/pixel1.jpeg'
-import pixel3 from '../../assets/images/pixel3.jpeg'
+import forest3 from '../../assets/images/forest3.jpg'
+import hotel1 from '../../assets/images/hotel1.jpg'
 import land3 from '../../assets/images/land3.jpg'
 import mount7 from '../../assets/images/mount7.jpg'
 import pixel7 from '../../assets/images/pixel7.jpeg'
@@ -32,11 +32,11 @@ function Thumbnail() {
         
         <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-   <img src={mount7}/>
-        <Carousel.Caption>
+   <img className='slide-show-img' src={mount7}/>
+        <Carousel.Caption className='custom-coursel-capt'>
         <div className="thumb-contentr">
         <h1 className='thumb-desc1'>life is too short</h1>
-          <h1 className='thumb-desc2'>world is wide</h1>
+          {/* <h1 className='thumb-desc2'>world is wide</h1> */}
           <p className='thumb-desc3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit iure officiis modi.
              Nesciunt tempore ipsa incidunt dolorum numquam, animi, ad quod consequuntur sunt 
             voluptas quae voluptatibus illo consequatur et optio.</p>
@@ -45,11 +45,11 @@ function Thumbnail() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <img src={cal}/>
-        <Carousel.Caption>
+      <img className='slide-show-img' src={hotel1}/>
+        <Carousel.Caption className='custom-coursel-capt'>
         <div className="thumb-contentr">
         <h1 className='thumb-desc1'>life is too short</h1>
-          <h1 className='thumb-desc2'>world is wide</h1>
+          {/* <h1 className='thumb-desc2'>world is wide</h1> */}
           <p className='thumb-desc3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit iure officiis modi.
              Nesciunt tempore ipsa incidunt dolorum numquam, animi, ad quod consequuntur sunt 
             voluptas quae voluptatibus illo consequatur et optio.</p>
@@ -57,11 +57,11 @@ function Thumbnail() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-      <img src={pixel7}/>
-        <Carousel.Caption>
+      <img className='slide-show-img' src={forest3}/>
+        <Carousel.Caption className='custom-coursel-capt'>
         <div className="thumb-contentr">
         <h1 className='thumb-desc1'>life is too short</h1>
-          <h1 className='thumb-desc2'>world is wide</h1>
+          {/* <h1 className='thumb-desc2'>world is wide</h1> */}
           <p className='thumb-desc3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit iure officiis modi.
              Nesciunt tempore ipsa incidunt dolorum numquam, animi, ad quod consequuntur sunt 
             voluptas quae voluptatibus illo consequatur et optio.</p>

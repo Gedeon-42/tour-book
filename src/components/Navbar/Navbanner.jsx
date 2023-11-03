@@ -32,9 +32,9 @@ const handleLogout =()=>{
        <img src={logo}/>
    </div>
    <div className="banner-btns">
-       <button className='btn-banner' onClick={handleLogout}>{loggedUser?<>logout</>:(<>Reserve</>)}</button>
-       <button className='btn-search'><FaSearch/></button>
-       <button className='btn-menu' onClick={openModal}><BiMenuAltRight/></button>
+       <div className='btn-banner' onClick={handleLogout}>{loggedUser?<>logout</>:(<>Reserve</>)}</div>
+       <div className='btn-search'><FaSearch/></div>
+       <div className='btn-menu' onClick={openModal}><BiMenuAltRight/></div>
    </div>
 </div>
 

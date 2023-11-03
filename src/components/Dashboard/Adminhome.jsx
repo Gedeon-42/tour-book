@@ -175,7 +175,7 @@ function Adminhome() {
       </div>
       <div className="flex2-body">
         <div className="flex2-body1">
-          <h1>PAR</h1>
+          <h1>PAR 460077</h1>
           <p>paris</p>
         </div>
         <p>--------<FaPlane/>----</p>

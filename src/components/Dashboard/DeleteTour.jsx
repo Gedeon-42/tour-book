@@ -19,7 +19,8 @@ setLoading(true)
           
             });
             deleteModal();
-            window.location.reload()
+          
+            //window.location.reload()
             setLoading(false)
             setTimeout(() => {
   

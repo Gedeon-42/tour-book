@@ -2,6 +2,9 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useJwt } from "react-jwt";
+import Notiflix,{Report} from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 
 const stateContext = createContext({
     user: '',
@@ -112,7 +115,13 @@ const ContactMutation = useMutation({
         //alert(error)
     },onSuccess:(data)=>{
         //alert('message sent')
+        Notify.success('message sent succesfully');
         console.log(data)
+        // setLoading(false)
+
+setTimeout(() => {
+  window.location.reload()
+}, 4000);
         //window.location.reload()
     }
 })
@@ -217,6 +226,7 @@ const {data:loggedUser} = useQuery({
             value={{
                 user,
                 setUser,
+               
                 books,
                 loginMutation,
                 signupMutation,
