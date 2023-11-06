@@ -37,14 +37,17 @@ const navigate = useNavigate()
         }
       });
       //setLoading(false)
-      //setTours(data.data)
-      openAddModal()
-      window.location.href='/admin/tours'
-      // Handle the response as needed, e.g., show a success message to the user
-    } catch (error) {
+      if (response.status === 201) {
+        const newTour = response.data.data;
+      setTours((prevTours) => [...prevTours, newTour]);
+   console.log(newTour)
+      // Close the modal or perform any other necessary actions
+      openAddModal();
+      //window.location.reload()
+    } }catch (error) {
       alert(error )
       console.error('Error:', error);
-      // Handle errors, e.g., show an error message to the user
+    
     }
   };
 

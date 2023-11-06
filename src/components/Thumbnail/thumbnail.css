@@ -54,7 +54,8 @@ position: relative;
 .thumb-desc3{
     font-size: 18px;
     text-transform: capitalize;
-    color: var(--light-white);
+    color: white;
+    font-weight: bold;
     line-height: 30px;
    margin-left: auto;
    margin-right: auto;

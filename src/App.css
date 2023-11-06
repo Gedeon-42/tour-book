@@ -983,9 +983,8 @@ width: 100%;
   gap: 10px;
   position: absolute;
   z-index: 20px;
-  margin-bottom: 20px;
-  right: 20px;
-  top: 0;
+  right: 20px !important;
+  top: 5px !important;
   cursor: pointer !important;
 
 }
@@ -993,4 +992,6 @@ width: 100%;
   background: transparent;
   outline: 0;
   border: 0;
+  padding: 7px;
+  cursor: pointer !important;
 }
