@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import sea from '../../assets/images/sea.jpg'
 import './thumbnail.css'
 import { FaCalendar,  FaFlag, } from 'react-icons/fa'
 import{ImLocation2,}from 'react-icons/im'
@@ -11,6 +10,7 @@ import land3 from '../../assets/images/land3.jpg'
 import mount7 from '../../assets/images/mount7.jpg'
 import pixel7 from '../../assets/images/pixel7.jpeg'
 import axios from 'axios'
+import { FaSlideshare } from 'react-icons/fa'
 function Thumbnail() {
 
   const [index, setIndex] = useState(0);

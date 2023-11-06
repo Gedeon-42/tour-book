@@ -19,7 +19,7 @@ function DeleteUser({deleteModal,user}) {
         //alert('user deleted')
         //setNotification('User was successfully deleted')
         //Notify.success('user deleted');
-        Report.success('user','user deleted','okey',()=>{
+        Report.success('user','user deleted','ok',()=>{
           
         });
         console.log('Tour deleted successfully', response.data);

@@ -12,7 +12,7 @@ function Tourslide() {
         <h1> trending , best selling tours </h1>
         <h1>Fun destination</h1>
         </div>
-  <div className="tour-location-container-home">
+  {/* <div className="tour-location-container-home">
             
             {tours?.map((tour)=>(
                 <div key={tour._id} className="tour-loaction-content">
@@ -47,7 +47,7 @@ function Tourslide() {
                 </div>
             ))}
       
-       </div>
+       </div> */}
     </div>
   )
 }

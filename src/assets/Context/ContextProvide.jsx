@@ -27,6 +27,7 @@ export const ContextProvider = ({ children }) => {
     const [allusers,setAllUsers]=useState([])
     const [allcontacts,setContacts]=useState([])
     const [notification, _setNotification] = useState('');
+    const[tours,setTours]= useState([])
     const setNotification = message => {
         _setNotification(message);
     
@@ -35,13 +36,13 @@ export const ContextProvider = ({ children }) => {
         }, 5000)
       }
     // fetching tours 
-    const {data:tours}= useQuery({
-        queryKey: ["tours"],
-        queryFn:async ()=>{
-           const res = await axios.get(' https://events-planner.onrender.com/api/v1/Tours/ ')
-            return res.data.data
-        }
-    }) 
+    // const {data:tours}= useQuery({
+    //     queryKey: ["tours"],
+    //     queryFn:async ()=>{
+    //        const res = await axios.get('https://events-planner.onrender.com/api/v1/Tours/')
+    //         return res.data.data
+    //     }
+    // }) 
     //fetching booking
     const {data:books}= useQuery({
         queryKey: ["books"],
@@ -57,8 +58,7 @@ export const ContextProvider = ({ children }) => {
         }
     })
 
-    // fetching contacts
-
+  
    
 
 
@@ -160,9 +160,7 @@ const {data:loggedUser} = useQuery({
 
   //console.log(loggedUser);
 
-
-
-    const setToken = (access_token) => {
+ const setToken = (access_token) => {
         _setToken(access_token);
         if (access_token) {
             localStorage.setItem('token', access_token); // Store the token in local storage
@@ -173,7 +171,7 @@ const {data:loggedUser} = useQuery({
     };
     useEffect(()=>{
         getUsers()
-        //fetchTours()
+        getTours()
         getContacts()
     },[])
     // get all users
@@ -194,6 +192,26 @@ const {data:loggedUser} = useQuery({
               
             });
     };
+    //get all tours
+    const getTours = () => {
+    
+      axios
+          .get('https://events-planner.onrender.com/api/v1/Tours/',{
+            headers:{
+       Authorization:`Bearer ${localStorage.getItem('token')}`
+            }
+          })
+          .then(({ data }) => {
+
+              setTours(data.data);
+              
+          })
+          .catch(() => {
+            
+          });
+  };
+
+    // get all contacts
       const getContacts= () => {
     
         axios
@@ -226,7 +244,7 @@ const {data:loggedUser} = useQuery({
             value={{
                 user,
                 setUser,
-               
+               setTours,
                 books,
                 loginMutation,
                 signupMutation,

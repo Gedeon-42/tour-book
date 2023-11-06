@@ -665,3 +665,58 @@ width: 400px;
     height: 40px;
     border-radius: 50%;
   }
+  .form-tour{
+    display: flex;
+    margin:40px 30%;
+    width: 700px;
+    border: 1px solid grey;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+  }
+  .tour-add-1{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    
+  }
+  .tour-add-2{
+    display: flex;
+    flex-direction: column;
+  }
+  .form-tour input[type=text]{
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+  }
+  .form-tour input[type=email]{
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+  }
+  .form-tour input[type=file]{
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+  }
+  .form-tour input[type=date]{
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+  }
+  .form-tour select{
+    padding: 10px;
+    border: 1px solid lightgray;
+    width: 400px;
+    margin-bottom: 10px;
+  }
