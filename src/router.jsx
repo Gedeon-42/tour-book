@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Signup from "./components/Auth/Signup";
 import App from "./App";
 import Contact from "./components/pages/Contact";
-import TourList from "./components/pages/TourList";
 import Layout from "./components/Layout/Layout";
 import Tour from "./components/pages/Tour";
 import Login from "./components/Auth/Login";
