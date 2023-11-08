@@ -5,16 +5,19 @@ import EditUser from './EditUser'
 import DeleteUser from './DeleteUser'
 import AddUser from './AddUser'
 import axiosClent from '../../../axiosclient'
-import axios from 'axios'
 import { useStateContext } from '../../assets/Context/ContextProvide'
 import { FaEdit, FaPen, FaTrash } from 'react-icons/fa'
+import ReactPaginate  from 'react-paginate'
 function Users() {
   const[Modal,setModal]= useState(false)
   const[modalDelete,setModaDelete]=useState(false)
   const[AddModal,setAddModal]= useState(false)
   const [selecteduser,setSelectedUser]=useState(null)
   const{allusers}=useStateContext()
-
+  //  pagination state
+  const[pageNumber,setPageNumber]=useState(0)
+  const userPerpage =4
+  const pageVisited =pageNumber * userPerpage 
   function openmodal(){
     setModal((prevModal)=>!prevModal)
   }

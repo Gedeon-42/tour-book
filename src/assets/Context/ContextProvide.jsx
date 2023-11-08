@@ -176,9 +176,7 @@ const {data:loggedUser} = useQuery({
     },[])
     // get all users
     const getUsers = () => {
-    
-        axios
-            .get('https://events-planner.onrender.com/api/v1/auth/View-all-users',{
+      axios.get('https://events-planner.onrender.com/api/v1/auth/View-all-users',{
               headers:{
          Authorization:`Bearer ${localStorage.getItem('token')}`
               }
